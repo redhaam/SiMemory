@@ -336,7 +336,7 @@ namespace SimulationInterface
             param = 1;
             proce.Children.Clear();
             //pro.afficher_encours(proce, param);
-            ALL.Background = new SolidColorBrush(Color.FromRgb(0, 255, 184));
+            ALL.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             finis.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -348,7 +348,7 @@ namespace SimulationInterface
             param = 2;
             proce.Children.Clear();
             //pro.afficher_encours(proce, param);
-            en_cours.Background = new SolidColorBrush(Color.FromRgb(0, 255, 184));
+            en_cours.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             ALL.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             finis.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -359,7 +359,7 @@ namespace SimulationInterface
             param = 3;
             proce.Children.Clear();
            // pro.afficher_encours(proce, param);
-            en_attente.Background = new SolidColorBrush(Color.FromRgb(0, 255, 184));
+            en_attente.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             ALL.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             finis.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -370,7 +370,7 @@ namespace SimulationInterface
             param = 4;
             proce.Children.Clear();
            // pro.afficher_encours(proce, param);
-            finis.Background = new SolidColorBrush(Color.FromRgb(0, 255, 184));
+            finis.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             ALL.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));

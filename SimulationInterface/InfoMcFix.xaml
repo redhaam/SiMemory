@@ -44,7 +44,7 @@
         Padding="8"
         UniformCornerRadius="6" Height="32">
             <TextBlock
-       TextWrapping="Wrap">
+       TextWrapping="Wrap" Margin="0,0,81,-6">
              Info sur la Memoire
             </TextBlock>
         </materialDesign:Card>
@@ -56,7 +56,7 @@
   x:Name="nbpart"          
   materialDesign:HintAssist.Hint="10"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="197,19,93,28.2" TextChanged="nbpart_TextChanged" />
-        
+
         <materialDesign:Chip Margin="26,26.4,0,12.4" Width="139" Height="Auto" Grid.Row="1">
             Files d'attente
         </materialDesign:Chip>
@@ -96,9 +96,11 @@
   materialDesign:HintAssist.Hint="100"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="194,54,96,9.6" />
 
-
+        <materialDesign:Chip Margin="58,71,0,10" Height="Auto" Grid.Row="4" Width="482">
+              Taille des partitions
+        </materialDesign:Chip>
         <Button
-    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="275,26.8,100,94" Height="Auto"  Click="Button_Click" Grid.Row="5">
+    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="374,101,52,20" Height="Auto"  Click="Button_Click" Grid.Row="5">
             Appliquer
         </Button>
 

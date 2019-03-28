@@ -19,17 +19,17 @@
     </Page.Resources>
 
     <Grid>
-        <materialDesign:Card
+        <Canvas Margin="176,107,99,133">
+           
+            <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth3"
-    Padding="32" Margin="74,80,125.8,142.8" VerticalAlignment="Stretch">
-            <TextBlock
-                FontFamily="Kristen ITC"
-    Style="{StaticResource MaterialDesignDisplay2TextBlock}" Margin="350,56,0,434.4" HorizontalAlignment="Left" Width="500" Text="SIMemory" FontWeight="Bold" />
-        </materialDesign:Card>
+    Padding="32" VerticalAlignment="Stretch" Height="545" Canvas.Left="68" Canvas.Top="47" Width="969">
+                <Image HorizontalAlignment="Left" Height="232" Margin="320,42,0,0" VerticalAlignment="Top" Width="250" Source="C:\Users\HP\Desktop\Design projet\tempsnip.png" RenderTransformOrigin="0.518,0.5"/>
+            </materialDesign:Card>
 
-        
+
             <TextBlock
-                Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="121,286,37.8,509.8" RenderTransformOrigin="0.5,0.5" Text="et concepts vue en cours de système d'exploitation.">
+                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Text="et concepts vue en cours de système d'exploitation." Canvas.Left="289" Canvas.Top="396">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -38,24 +38,25 @@
                         <TranslateTransform X="3.935"/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-       
 
-        <TextBlock
-    Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="98,253,183.8,548.8" RenderTransformOrigin="0.5,0.5">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="3.721"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="3.935"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="&#x9;"/><Run Text="SIMemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions"/><Run Text=" "/><LineBreak/><Run Text=" "/></TextBlock>
 
-        <Button
+            <TextBlock
+    Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="104" Canvas.Top="340" Width="903">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="3.721"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="3.935"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="&#x9;"/><Run Text="SIMemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions"/><Run Text=" "/><LineBreak/><Run Text=" "/></TextBlock>
+
+            <Button
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="502,479,585.8,334.8" Height="Auto" Click="Button_Click">
-            Commencer
-        </Button>
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="Auto" Click="Button_Click" Canvas.Left="482" Canvas.Top="476">
+                Commencer
+            </Button>
+        </Canvas>
 
     </Grid>
 

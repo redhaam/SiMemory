@@ -197,8 +197,8 @@
 
     <Grid x:Name="Gri" HorizontalAlignment="Left" Height="871" VerticalAlignment="Top" Width="1541" Margin="0,0,-6.6,-0.6" RenderTransformOrigin="0.46,0.497">
         <Grid Height="870" Margin="-19,-15,22,0" VerticalAlignment="Top" Opacity="0.975">
-            <Button x:Name="btn_sim" Content="Parametre" Click="btn_sim_Click" Margin="665,52,759.8,788" Height="Auto" Background="#FF0A903D"/>
-            <Button x:Name="sim" Content="Simulation" Canvas.Top="41" Click="sim_Click" Margin="665,583,763.8,257" Height="Auto" Background="#FF0A903D"/>
+            <Button x:Name="btn_sim" Content="Parametre" Click="btn_sim_Click" Margin="720,704,704,136" Height="Auto" Background="#00acc1"/>
+            <Button x:Name="sim" Content="Simulation" Canvas.Top="41" Click="sim_Click" Margin="389,655,1040,185" Height="Auto" Background="#00acc1"/>
             <TextBox x:Name="nbp" Canvas.Left="141" TextWrapping="Wrap" Text="" Margin="228,75,1309.8,770" RenderTransformOrigin="0.5,0.5">
                 <TextBox.RenderTransform>
                     <TransformGroup>
@@ -209,40 +209,44 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <Canvas Margin="73,59,1039.8,0" Height="314" VerticalAlignment="Top">
+            <Canvas Margin="78,53,1040,0" Height="320" VerticalAlignment="Top">
                 <Canvas.Effect>
                     <DropShadowEffect/>
                 </Canvas.Effect>
 
-                <Border  Background="#FFDDDDD4" Height="281" Width="410" Canvas.Left="-6" Canvas.Top="38" BorderThickness="3" BorderBrush="Black" CornerRadius="0,0,10,10"/>
+                <Border   Height="281" Width="410" Canvas.Left="-6" Canvas.Top="44" BorderThickness="3" BorderBrush="Black" CornerRadius="0,0,10,10"/>
 
 
-                <Button  Canvas.Top="44" Width="101" Content="En-cours" Height="30" Click="Button_Click" Canvas.Left="187" Background="#FF5ACB84" HorizontalAlignment="Right"/>
-                <Button Opacity="1" Canvas.Top="44" Content="Blocké" Height="30" Canvas.Left="88" Click="Button_Click_1" Background="#FF5ACB84" Width="98" />
-                <Button Opacity="1" Canvas.Top="44" Content="fini" Height="30" Canvas.Left="290"  Click="Button_Click_3" Background="#FF5ACB84" Width="107"/>
-                <Button  Canvas.Top="44" Content="tout" Height="30" Canvas.Left="-1" Click="Button_Click_2" Background="#FF5ACB84" VerticalAlignment="Top" Width="87" />
+                <Button  Canvas.Top="55" Width="98" Content="En-cours" Height="30" Click="Button_Click" Canvas.Left="203" Background="#aed581" HorizontalAlignment="Right"/>
+                <Button Opacity="1" Canvas.Top="55" Content="Blocké" Height="30" Canvas.Left="98" Click="Button_Click_1" Background="#aed581" Width="100" />
+                <Button Opacity="1" Canvas.Top="55" Content="fini" Height="30" Canvas.Left="306"  Click="Button_Click_3" Background="#aed581" Width="82"/>
+                <Button  Canvas.Top="55" Content="tout" Height="30" Click="Button_Click_2" Background="#aed581" VerticalAlignment="Top" Width="83" Canvas.Left="10" />
 
-                <Rectangle Fill="#FF2B2B48" Height="45" Stroke="Black" Canvas.Top="-10" Width="428" RadiusX="15" RadiusY="15" Canvas.Left="-15"/>
+                <Rectangle Fill="#006978" HorizontalAlignment="Left" Height="35" StrokeThickness="3" VerticalAlignment="Top" Width="410" RadiusX="5" RadiusY="5" Canvas.Left="-6" Canvas.Top="-2">
+                    <Rectangle.Effect>
+                        <DropShadowEffect/>
+                    </Rectangle.Effect>
+                </Rectangle>
                 <TextBlock Canvas.Left="129" TextWrapping="Wrap" Text="Liste des Processus" Canvas.Top="4" Width="138" Foreground="#DDFFFFFF" FontWeight="Bold" FontSize="14"/>
-                <ScrollViewer CanContentScroll="True" Height="234" Width="388" Canvas.Top="83" Foreground="#DD000000" Canvas.Left="5">
+                <ScrollViewer CanContentScroll="True" Height="218" Width="388" Canvas.Top="90" >
                     <StackPanel x:Name="Sta">
 
                     </StackPanel>
                 </ScrollViewer>
             </Canvas>
-            <Button x:Name="stop" Content="STOP" HorizontalAlignment="Left" Margin="781,584,0,0" VerticalAlignment="Top" Width="101" Height="30" Click="stop_Click">
+            <Button x:Name="stop" Content="STOP" HorizontalAlignment="Left" Margin="876,704,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="stop_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0CC780" Offset="0"/>
-                        <GradientStop Color="#FF00F6FF" Offset="1"/>
+                        <GradientStop Color="#80deea" Offset="0"/>
+                        <GradientStop Color="#80deea" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="voir" Content="Voir" HorizontalAlignment="Left" Margin="782,53,0,0" VerticalAlignment="Top" Width="102" Height="27" Click="voir_Click" >
+            <Button x:Name="voir" Content="Voir" HorizontalAlignment="Left" Margin="573,707,0,0" VerticalAlignment="Top" Width="102" Height="27" Click="voir_Click" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF17C28E" Offset="0"/>
-                        <GradientStop Color="#FF29FBFF" Offset="1"/>
+                        <GradientStop Color="#80deea" Offset="0"/>
+                        <GradientStop Color="#80deea" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
@@ -258,40 +262,40 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button  Opacity="1" x:Name="Add_Pro" Content="+" Canvas.Top="19" Click="Add_Pro_Click" Margin="499,228,992.8,603" Height="Auto" Background="#FFE3E3E3" FontSize="24" BorderThickness="1" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" FontWeight="Light" BorderBrush="#FFE3E3E3"/>
-            <TextBox x:Name="Taille" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="19" RenderTransformOrigin="0.487,0.435" Margin="488,157,976.8,678" Text="Taille :"/>
+            <Button  Opacity="1" x:Name="Add_Pro" Content="+" Canvas.Top="19" Click="Add_Pro_Click" Margin="438,587,1054,244" Height="Auto" Background="#00acc1" FontSize="24" BorderThickness="1" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" FontWeight="Light" BorderBrush="#FFE3E3E3"/>
+            <TextBox x:Name="Taille" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="19" RenderTransformOrigin="0.487,0.435" Margin="388,472,1054,363" Text="Taille :"/>
 
-            <TextBox x:Name="Delay" Canvas.Left="164" TextWrapping="Wrap" Canvas.Top="19" Margin="488,189,975.8,648" Text="Temps :" />
+            <TextBox x:Name="Delay" Canvas.Left="164" TextWrapping="Wrap" Canvas.Top="19" Margin="388,534,1054,303" Text="Temps :" />
             <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="629,731,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296" FontWeight="Bold" FontSize="12" Foreground="Red" Text=""/>
-            <Rectangle HorizontalAlignment="Left" Height="51" Margin="664,89,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="220" Fill="#FF2CF8F8" Stroke="Black"/>
+            <Rectangle HorizontalAlignment="Left" Height="51" Margin="664,89,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="220" Fill="#8bc34a" Stroke="Black"/>
             <TextBlock HorizontalAlignment="Left" Margin="758,103,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Height="34" Width="51" FontSize="24" FontWeight="Bold"/>
 
 
 
 
         </Grid>
-        <Canvas x:Name="derol" HorizontalAlignment="Left" Height="305" Margin="53,386,0,0" VerticalAlignment="Top" Width="434">
-            <Rectangle HorizontalAlignment="Left" Height="310" Stroke="#FFA2A2A2" StrokeThickness="0" VerticalAlignment="Top" Width="340" RadiusX="15" RadiusY="15" Canvas.Top="4">
+        <Canvas x:Name="derol" HorizontalAlignment="Left" Height="296" Margin="1110,405,0,0" VerticalAlignment="Top" Width="384">
+            <Rectangle HorizontalAlignment="Left" Height="314" Stroke="#FFA2A2A2" StrokeThickness="0" VerticalAlignment="Top" Width="340" RadiusX="15" RadiusY="15" Canvas.Top="-9" Canvas.Left="1095">
                 <Rectangle.Effect>
                     <DropShadowEffect BlurRadius="5"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Fill="#FF2F2F4C" HorizontalAlignment="Left" Height="43" StrokeThickness="3" VerticalAlignment="Top" Width="422" RadiusX="5" RadiusY="5" Canvas.Left="-8" Canvas.Top="-6">
+            <Rectangle Fill="#006978" HorizontalAlignment="Left" Height="43" StrokeThickness="3" VerticalAlignment="Top" Width="363" RadiusX="5" RadiusY="5" Canvas.Left="11" Canvas.Top="-1">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Height="20" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold" Canvas.Left="64" Canvas.Top="5"/>
-            <TextBlock x:Name="derlo" Background="#FFDDDDD4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="157" Width="331" FontWeight="Bold" RenderTransformOrigin="1.107,1.227" Panel.ZIndex="1" Foreground="Black" FontSize="10" Canvas.Left="40" Canvas.Top="60"><Run Text="    "/><LineBreak/><Run Text="   "/><Run Text="Dérouleme"/><Run Text="nt de la simulation"/></TextBlock>
-            <Rectangle Stroke="#FF2B2B48" StrokeThickness="3" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" Width="410" Fill="#FFDDDDD4" Canvas.Left="-1" Canvas.Top="42" RadiusX="10" RadiusY="10">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Height="20" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold" Canvas.Left="64" Canvas.Top="10"/>
+            <TextBlock x:Name="derlo"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="292" FontWeight="Bold" RenderTransformOrigin="1.107,1.227" Panel.ZIndex="1" Foreground="Black" FontSize="10" Canvas.Left="46" Canvas.Top="60"><Run Text="    "/><LineBreak/><Run Text="   "/><Run Text="Dérouleme"/><Run Text="nt de la simulation"/></TextBlock>
+            <Rectangle Height="266"  Stroke="#FF7D7C7C" Width="360" Canvas.Left="10" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7" StrokeThickness="0" Canvas.Top="54">
                 <Rectangle.Effect>
-                    <DropShadowEffect Color="#FFC5C4C4"/>
+                    <DropShadowEffect Color="#FFC3C3C3"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Ellipse Fill="#FF2F2F4C" HorizontalAlignment="Left" Height="71" Stroke="#FF525D6E" StrokeThickness="3" VerticalAlignment="Top" Width="322" Canvas.Left="43" Canvas.Top="224"/>
-            <Button x:Name="rt" Content="&gt;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Background="#FF3E3E42" BorderBrush="{x:Null}"  FontWeight="Bold" FontSize="20" Foreground="White" Height="40" Canvas.Left="363" Canvas.Top="239" Click="rt_Click"/>
+            <Ellipse Fill="#006978" HorizontalAlignment="Left" Height="35" Stroke="#FF525D6E" StrokeThickness="3" VerticalAlignment="Top" Width="282" Canvas.Left="64" Canvas.Top="244"/>
+            <Button x:Name="rt" Content="&gt;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Background="#006978" BorderBrush="{x:Null}"  FontWeight="Bold" FontSize="20" Foreground="White" Height="40" Canvas.Left="330" Canvas.Top="239" Click="rt_Click"/>
             <TextBlock x:Name="num_text" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Foreground="White" FontSize="20" TextAlignment="Center" Width="30" Height="27" FontWeight="Bold" Canvas.Left="187" Canvas.Top="247"/>
-            <Button x:Name="av" Content="&lt;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" FontWeight="Bold" FontSize="20" Background="#FF3E3E42"  BorderBrush="{x:Null}" Foreground="White" Height="40" Canvas.Left="1" Canvas.Top="238" Click="av_Click"/>
+            <Button x:Name="av" Content="&lt;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" FontWeight="Bold" FontSize="20" Background="#006978"  BorderBrush="{x:Null}" Foreground="White" Height="40" Canvas.Left="31" Canvas.Top="239" Click="av_Click"/>
 
         </Canvas>
 
@@ -300,22 +304,26 @@
             <Rectangle Height="435" Canvas.Left="70" Stroke="Black" Canvas.Top="0" Width="220" StrokeThickness="3">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0BA545" Offset="1"/>
-                        <GradientStop Color="#FF8BF4B2"/>
-                        <GradientStop Color="#FF85E9AA" Offset="1"/>
-                        <GradientStop Color="#FF95E7B3" Offset="0.003"/>
+                        <GradientStop Color="#0097a7" Offset="1"/>
+                        <GradientStop Color="#0097a7"/>
+                        <GradientStop Color="#0097a7" Offset="1"/>
+                        <GradientStop Color="#0097a7" Offset="0.003"/>
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
             <TextBlock Width="142" Canvas.Left="114" Canvas.Top="160" Text="SIMEMORY" Foreground="#DD000000" FontSize="24" FontWeight="Bold" Height="29" />
 
         </Canvas>
-        <Canvas x:Name="stat_pro" Margin="1185,350,51,177">
+        <Canvas x:Name="stat_pro" Margin="46,396,1191,131">
             <Canvas.Effect>
                 <DropShadowEffect/>
             </Canvas.Effect>
-            <Rectangle Fill="#FF2B2B48" HorizontalAlignment="Left" Canvas.Top="3" Canvas.Left="-3" Height="45"  RadiusY="15" RadiusX="15" Stroke="Black" VerticalAlignment="Top" Width="296" RenderTransformOrigin="0.503,0.469"/>
-            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Statistiques des processus" VerticalAlignment="Top" Width="172" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold" Canvas.Left="51" Canvas.Top="16"/>
+            <Rectangle Fill="#006978" HorizontalAlignment="Left" Height="35" StrokeThickness="3" VerticalAlignment="Top" Width="290" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="-2">
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Statistiques des processus" VerticalAlignment="Top" Width="172" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold" Canvas.Left="46" Canvas.Top="10"/>
 
             <Rectangle Fill="#FF0A903D" HorizontalAlignment="Left" Height="101" StrokeThickness="5" VerticalAlignment="Top" Width="28" Canvas.Top="65" Canvas.Left="44" Panel.ZIndex="1"/>
             <Rectangle x:Name="cours" HorizontalAlignment="Left" Height="100" StrokeThickness="5" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5" Fill="White" Canvas.Top="63" Canvas.Left="44" Panel.ZIndex="1">
@@ -347,61 +355,55 @@
             <Rectangle Fill="#FF771493" Height="15" Canvas.Left="30" StrokeThickness="5" Canvas.Top="270" Width="15" Panel.ZIndex="1"/>
             <Rectangle x:Name="finishov" Fill="White" HorizontalAlignment="Left" Height="99" StrokeThickness="5" VerticalAlignment="Top" Width="29" Canvas.Left="222" Canvas.Top="63" Panel.ZIndex="1"/>
             <TextBlock x:Name="finistext" TextWrapping="Wrap" Canvas.Top="171" Width="20" Foreground="#FF771493" Canvas.Left="226" FontWeight="Bold" FontSize="14" RenderTransformOrigin="0.54,0.283" Panel.ZIndex="1"/>
-            <Rectangle  Height="273" StrokeThickness="3" Width="282" Stroke="#FF2B2B48" RadiusX="10" RadiusY="8" Canvas.Top="50" Canvas.Left="7">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0BA545" Offset="1"/>
-                        <GradientStop Color="#FF8BF4B2"/>
-                        <GradientStop Color="#FF85E9AA" Offset="1"/>
-                        <GradientStop Color="#FF95E7B3" Offset="0.003"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
+            <Rectangle Height="262" Stroke="#FF7D7C7C" Width="300" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7" StrokeThickness="0" Canvas.Top="54">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="#FFC3C3C3"/>
+                </Rectangle.Effect>
             </Rectangle>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="219" FontWeight="Bold" Canvas.Left="64" Canvas.Top="200" Panel.ZIndex="1"><Run Text="les processus en cours"/><Run Text=" "/><Run Text="d'execution"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="219" FontWeight="Bold" Canvas.Left="64" Canvas.Top="235" Panel.ZIndex="1"><Run Text="les processus en "/><Run Text="attente"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="219" FontWeight="Bold" Canvas.Left="64" Canvas.Top="271" Panel.ZIndex="1"><Run Text="les processus "/><Run Text="finis"/></TextBlock>
         </Canvas>
-        <Canvas x:Name="stat_ram" HorizontalAlignment="Left" Height="322" Margin="1167,36,0,0" VerticalAlignment="Top" Width="342">
+        <Canvas x:Name="stat_ram" HorizontalAlignment="Left" Height="330" Margin="1110,39,0,0" VerticalAlignment="Top" Width="399">
             <Canvas.Effect>
                 <DropShadowEffect/>
             </Canvas.Effect>
             <Ellipse x:Name="esp_libre" Fill="#FFEDE7E7" HorizontalAlignment="Left" Height="150" Stroke="#FF25B15A" StrokeThickness="5" VerticalAlignment="Top" Width="150" Canvas.Left="90" Canvas.Top="66" Panel.ZIndex="1"/>
             <TextBlock x:Name="taille_lib" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" FontSize="24" FontWeight="Bold" Width="65" TextAlignment="Center" Foreground="Black" Canvas.Left="131" Canvas.Top="130" Panel.ZIndex="1"><Run Text="100"/><LineBreak/><Run/></TextBlock>
-            <Rectangle Height="250" Stroke="#FF2B2B48" StrokeThickness="3" Width="277" Canvas.Left="26" Canvas.Top="46" RadiusX="10" RadiusY="10">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF0BA545" Offset="1"/>
-                        <GradientStop Color="#FF8BF4B2"/>
-                        <GradientStop Color="#FF85E9AA" Offset="1"/>
-                        <GradientStop Color="#FF95E7B3" Offset="0.003"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
+            <Rectangle Height="266" Stroke="#FF7D7C7C" Width="360" Canvas.Left="10" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7" StrokeThickness="0" Canvas.Top="54">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="#FFC3C3C3"/>
+                </Rectangle.Effect>
             </Rectangle>
-            <TextBlock x:Name="frag" Text="l'espace libre fragmenté  : " Height="40" Width="236" FontWeight="Bold" Canvas.Left="54" Canvas.Top="227"/>
-            <TextBlock x:Name="libt" Text="l'espace utilisable  : " Height="40" Width="236" FontWeight="Bold" Canvas.Left="54" Canvas.Top="259"/>
-            <Rectangle Fill="#FF2B2B48" Height="41" Canvas.Left="10" RadiusY="15" RadiusX="15" Stroke="Black" Canvas.Top="3" Width="305"/>
-            <TextBlock Canvas.Left="72" TextWrapping="Wrap" Text="Statistique de la memoire" Canvas.Top="17" Width="201" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBlock x:Name="frag" Text="l'espace libre fragmenté  : " Height="40" Width="236" FontWeight="Bold" Canvas.Left="54" Canvas.Top="232"/>
+            <TextBlock x:Name="libt" Text="l'espace utilisable  : " Height="40" Width="236" FontWeight="Bold" Canvas.Left="54" Canvas.Top="272"/>
+            <Rectangle Fill="#006978" HorizontalAlignment="Left" Height="35" StrokeThickness="3" VerticalAlignment="Top" Width="360" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="-1">
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Canvas.Left="72" TextWrapping="Wrap" Text="Statistique de la memoire" Canvas.Top="10" Width="201" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold"/>
         </Canvas>
-        <Ellipse x:Name="timeE" HorizontalAlignment="Left" Height="105" Margin="708,611,0,0" StrokeThickness="10" VerticalAlignment="Top" Width="100">
+        <Ellipse x:Name="timeE" HorizontalAlignment="Left" Height="78" Margin="720,582,0,0" StrokeThickness="10" VerticalAlignment="Top" Width="76">
             <Ellipse.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFBAD9A3" Offset="1"/>
+                    <GradientStop Color="#80deea" Offset="0"/>
+                    <GradientStop Color="#80deea" Offset="1"/>
                 </LinearGradientBrush>
             </Ellipse.Fill>
             <Ellipse.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFBAE8A8" Offset="1"/>
+                    <GradientStop Color="#00acc1" Offset="0"/>
+                    <GradientStop Color="#00acc1" Offset="1"/>
                 </LinearGradientBrush>
             </Ellipse.Stroke>
         </Ellipse>
-        <TextBox x:Name="text" HorizontalAlignment="Left" Height="49" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" Margin="739,633,0,0" RenderTransformOrigin="0.492,0.378" TextChanged="TextBox_TextChanged" FontSize="24" BorderBrush="{x:Null}" Background="{x:Null}" Text="0" Panel.ZIndex="1" TextAlignment="Center">
+        <TextBox x:Name="text" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Margin="741,601,0,0" RenderTransformOrigin="0.492,0.378" TextChanged="TextBox_TextChanged" FontSize="24" BorderBrush="{x:Null}" Background="#80deea" Text="0" Panel.ZIndex="1" TextAlignment="Center">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform AngleY="-0.355"/>
-                    <RotateTransform/>
+                    <RotateTransform Angle="0.429"/>
                     <TranslateTransform Y="2.508"/>
                 </TransformGroup>
             </TextBox.RenderTransform>

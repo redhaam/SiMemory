@@ -62,6 +62,7 @@ namespace SimulationInterface
             int a = 0;
             int pos = 10, pas = 600 / Convert.ToInt32(nbpart.Text);
             GD.Children.Clear();
+            
             while (a < Convert.ToInt32(nbpart.Text))
             {
                 TextBox t = new TextBox();
