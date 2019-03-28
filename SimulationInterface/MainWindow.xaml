@@ -63,7 +63,7 @@
         </materialDesign:ColorZone>
 
 
-        <Image HorizontalAlignment="Left" Height="70" Margin="54,0,0,0" VerticalAlignment="Top" Width="188" Source="C:\Users\HP\Desktop\Design projet\tempsnip2.png"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="54,0,0,0" VerticalAlignment="Top" Width="188" Source="..\tempsnip2.png"/>
 
 
     </Grid>

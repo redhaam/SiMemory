@@ -24,7 +24,7 @@
             <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth3"
     Padding="32" VerticalAlignment="Stretch" Height="545" Canvas.Left="68" Canvas.Top="47" Width="969">
-                <Image HorizontalAlignment="Left" Height="232" Margin="320,42,0,0" VerticalAlignment="Top" Width="250" Source="C:\Users\HP\Desktop\Design projet\tempsnip.png" RenderTransformOrigin="0.518,0.5"/>
+                <Image HorizontalAlignment="Left" Height="232" Margin="320,42,0,0" VerticalAlignment="Top" Width="250" Source="..\tempsnip.png" RenderTransformOrigin="0.518,0.5"/>
             </materialDesign:Card>
 
 
