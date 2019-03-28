@@ -15,14 +15,69 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
-
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid>
-        <materialDesign:Card Margin="616,144,584.8,0" Height="450">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="167*"/>
+            <RowDefinition Height="283*"/>
+        </Grid.RowDefinitions>
+        <!-- the transitioner will manage your transitions. notice how SelectedIndex is set to zero: the first slide (instead of the default of -1) -->
+        <materialDesign:Transitioner
+  SelectedIndex="0"
+  AutoApplyTransitionOrigins="True" Margin="0,50,0,20">
+            <materialDesign:Transitioner.InputBindings>
+                <KeyBinding
+      Key="Left"
+      Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}" />
+                <KeyBinding
+      Key="Right"
+      Command="{x:Static materialDesign:Transitioner.MoveNextCommand}" />
+            </materialDesign:Transitioner.InputBindings>
+            <!-- you can use a slide for each page, let's add a touch of fade for our first page  -->
+            <materialDesign:TransitionerSlide
+OpeningEffect="{materialDesign:TransitionEffect FadeIn}">
+                <local:Slide1_Intro xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" Loaded="Slide1_Intro_Loaded" Height="264" VerticalAlignment="Top" />
+            </materialDesign:TransitionerSlide>
+            <!-- but you can use bare xaml too -->
+            <local:Slide2_Intro xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
+            <!-- you can control (and create your own) wipes -->
+            <materialDesign:TransitionerSlide>
+                <materialDesign:TransitionerSlide.BackwardWipe>
+                    <materialDesign:CircleWipe />
+                </materialDesign:TransitionerSlide.BackwardWipe>
+                <materialDesign:TransitionerSlide.ForwardWipe>
+                    <materialDesign:SlideWipe
+        Direction="Right" />
+                </materialDesign:TransitionerSlide.ForwardWipe>
+                <local:Slide3_Intro xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
+            </materialDesign:TransitionerSlide>
+            <!-- now we are going to slide this in by combining some extra effects.  the inner content slides in, so we'll set the outer background and clip, to keep things nice -->
+            <materialDesign:TransitionerSlide
+    Background="{DynamicResource MaterialDesignDarkBackground}"
+    Foreground="{DynamicResource MaterialDesignDarkForeground}"
+    ClipToBounds="True">
+                <materialDesign:TransitionerSlide.OpeningEffects>
+                    <materialDesign:TransitionEffect
+        Kind="SlideInFromLeft"
+        Duration="0:0:0.8" />
+                    <materialDesign:TransitionEffect
+        Kind="SlideInFromBottom"
+        Duration="0:0:0.8"
+        OffsetTime="0:0:0.15" />
+                </materialDesign:TransitionerSlide.OpeningEffects>
+                <local:Slide4_CombineTransitions xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
+            </materialDesign:TransitionerSlide>
+            <local:Slide6_Origins xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
+
+        </materialDesign:Transitioner>
+
+
+
+
+        <materialDesign:Card Margin="602,38,599,0" Height="450" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition
@@ -32,8 +87,9 @@
                     <RowDefinition
         Height="Auto" />
                 </Grid.RowDefinitions>
+
                 <Image
-      Source="C:\Users\Lenovo\Desktop\Etude\Projet-2CP-master\SimulationInterface\images\x.png"
+      Image.Source="Image\x.png"
       Stretch="UniformToFill" Margin="0,0,0,308.6" Grid.RowSpan="2" />
                 <Button
       Grid.Row="0"
@@ -71,10 +127,7 @@
                 </Button>
             </Grid>
         </materialDesign:Card>
-
-
-
-        <materialDesign:Card Margin="222,145,978.8,0" RenderTransformOrigin="0.477,0.469" Height="450">
+        <materialDesign:Card Margin="202,39,999,0" RenderTransformOrigin="0.477,0.469" Height="450" Grid.Row="1">
             <materialDesign:Card.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -93,7 +146,7 @@
         Height="Auto" />
                 </Grid.RowDefinitions>
                 <Image
-      Source="C:\Users\Lenovo\Desktop\Etude\Projet-2CP-master\SimulationInterface\images\y.gif"
+      Image.Source="Image\y.gif"
       Stretch="UniformToFill" Margin="8,0,0,0" />
                 <Button
       Grid.Row="0"
@@ -129,7 +182,7 @@
                 </Button>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card Margin="998,143,202.8,0" Height="450">
+        <materialDesign:Card Margin="1016,38,185,0" Height="450" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition
@@ -140,7 +193,7 @@
         Height="Auto" />
                 </Grid.RowDefinitions>
                 <Image
-      Source="C:\Users\Lenovo\Desktop\Etude\Projet-2CP-master\SimulationInterface\images\z.jpg"
+      Image.Source="Image\z.jpg"
       Height="140"
       Stretch="UniformToFill" />
                 <Button

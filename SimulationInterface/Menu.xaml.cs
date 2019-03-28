@@ -42,5 +42,10 @@ namespace SimulationInterface
             NavigationService ns = NavigationService.GetNavigationService(this);
             ns.Navigate(new Uri("Page2.xaml", UriKind.Relative));
         }
+
+        private void Slide1_Intro_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

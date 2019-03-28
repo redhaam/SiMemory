@@ -62,8 +62,7 @@
             </StackPanel>
         </materialDesign:ColorZone>
 
-
-        <Image HorizontalAlignment="Left" Height="70" Margin="54,0,0,0" VerticalAlignment="Top" Width="188" Source="..\tempsnip2.png"/>
+        <Image Image.Source="Image/tempsnip2.png" RenderTransformOrigin="-8.725,-5.438" Margin="88,0,1289,801"/>
 
 
     </Grid>

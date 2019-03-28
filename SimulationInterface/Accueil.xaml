@@ -14,22 +14,23 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid>
-        <Canvas Margin="176,107,99,133">
-           
+        <Canvas Margin="120,95,155,136">
+
             <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth3"
-    Padding="32" VerticalAlignment="Stretch" Height="545" Canvas.Left="68" Canvas.Top="47" Width="969">
-                <Image HorizontalAlignment="Left" Height="232" Margin="320,42,0,0" VerticalAlignment="Top" Width="250" Source="..\tempsnip.png" RenderTransformOrigin="0.518,0.5"/>
+    Padding="32" VerticalAlignment="Stretch" Height="577" Canvas.Left="47" Canvas.Top="26" Width="969">
+                <Image Image.Source="Image/tempsnip.png" Margin="240,10,243,257"/>
             </materialDesign:Card>
 
 
             <TextBlock
-                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Text="et concepts vue en cours de système d'exploitation." Canvas.Left="289" Canvas.Top="396">
+                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="289" Canvas.Top="396">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -37,11 +38,11 @@
                         <RotateTransform/>
                         <TranslateTransform X="3.935"/>
                     </TransformGroup>
-                </TextBlock.RenderTransform></TextBlock>
+                </TextBlock.RenderTransform><Run Text="et "/><Run Text="les "/><Run Text="concepts vue"/><Run Text="s"/><Run Text=" en cours de système d'exploitation."/></TextBlock>
 
 
             <TextBlock
-    Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="104" Canvas.Top="340" Width="903">
+    Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="58" Canvas.Top="340" Width="949">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -49,15 +50,14 @@
                         <RotateTransform/>
                         <TranslateTransform X="3.935"/>
                     </TransformGroup>
-                </TextBlock.RenderTransform><Run Text="&#x9;"/><Run Text="SIMemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions"/><Run Text=" "/><LineBreak/><Run Text=" "/></TextBlock>
+                </TextBlock.RenderTransform><Run Text="SIMemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions"/><LineBreak/><Run Text=" "/></TextBlock>
 
             <Button
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="Auto" Click="Button_Click" Canvas.Left="482" Canvas.Top="476">
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="46" Click="Button_Click" Canvas.Left="460" Canvas.Top="470" Width="146">
                 Commencer
             </Button>
         </Canvas>
-
     </Grid>
 
 </Page>
