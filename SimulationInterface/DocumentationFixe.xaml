@@ -1,0 +1,37 @@
+﻿<Page x:Class="SimulationInterface.DocumentationFixe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SimulationInterface"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       Background="{DynamicResource MaterialDesignPaper}"
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Title="InfoPartFixe" Height="833.463" Width="1424.514">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Expander.xaml" />
+
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+
+    <Grid Margin="0,3,-0.2,-0.4">
+        <TextBlock
+    Style="{StaticResource MaterialDesignDisplay3TextBlock}" Margin="52,42,946,686">
+  Documentation
+        </TextBlock>
+
+
+
+
+
+    </Grid>
+</Page>

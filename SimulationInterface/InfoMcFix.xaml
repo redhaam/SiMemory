@@ -1,0 +1,111 @@
+﻿<Window x:Class="SimulationInterface.InfoMcFix"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationInterface"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="InfoMcFix" Height="660" Width="600" WindowStartupLocation="CenterScreen">
+
+
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Right" Width="592" Margin="0,2,-0.4,-3.6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="98"/>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="83*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="165*"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Chip Margin="19,22,0,26.2" Height="Auto" Grid.Row="3" Width="147">
+            Nombre de partitions
+        </materialDesign:Chip>
+        <materialDesign:Card
+        Background="{DynamicResource PrimaryHueDarkBrush}"
+        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+        Padding="8"
+        UniformCornerRadius="6" Height="32">
+            <TextBlock
+       TextWrapping="Wrap">
+             Info sur la Memoire
+            </TextBlock>
+        </materialDesign:Card>
+
+        <materialDesign:Chip Margin="25,56,0,8.6" Width="143" Height="Auto">
+            Taille de la mémoire
+        </materialDesign:Chip>
+        <TextBox Grid.Row="3"
+  x:Name="nbpart"          
+  materialDesign:HintAssist.Hint="10"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="197,19,93,28.2" TextChanged="nbpart_TextChanged" />
+        
+        <materialDesign:Chip Margin="26,26.4,0,12.4" Width="139" Height="Auto" Grid.Row="1">
+            Files d'attente
+        </materialDesign:Chip>
+        <ComboBox
+  x:Name="TypeFile"          
+  materialDesign:HintAssist.Hint="Une seule File" Margin="197,38.4,93,10.4" Height="28" Grid.Row="1" >
+            <ComboBoxItem x:Name="unef" Selected="unef_Selected">
+                Une seule file
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="plusf" Selected="plusf_Selected">
+                Plusieures files
+            </ComboBoxItem>
+
+        </ComboBox>
+
+        <Canvas x:Name="GD" Grid.Row="4"/>
+        <materialDesign:Chip Margin="26,30.6,0,35" Width="139" Height="Auto" Grid.Row="2">
+            Algorithme
+        </materialDesign:Chip>
+        <ComboBox
+  materialDesign:HintAssist.Hint="First Fit" Margin="198,33.6,92,36" Height="28" Grid.Row="2">
+            <ComboBoxItem x:Name="first" Selected="first_Selected">
+                First Fit
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="next" Selected="next_Selected">
+                Next Fit
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="best" Selected="best_Selected">
+                Best Fit
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="worst" Selected="worst_Selected">
+                Worst Fit
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox
+  x:Name="taimem"          
+  materialDesign:HintAssist.Hint="100"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="194,54,96,9.6" />
+
+
+        <Button
+    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="275,26.8,100,94" Height="Auto"  Click="Button_Click" Grid.Row="5">
+            Appliquer
+        </Button>
+
+
+
+
+
+
+    </Grid>
+</Window>

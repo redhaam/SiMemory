@@ -1,0 +1,22 @@
+﻿<Window x:Name="win1" x:Class="SimulationInterface.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationInterface"
+        mc:Ignorable="d"
+        Title="Window1" Height="558.39" Width="206.921">
+    <Grid Margin="0,0,39,-0.2">
+        <StackPanel x:Name="SP" Height="484" VerticalAlignment="Top" Margin="-1,0,-39.2,0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.308"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.395"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+        </StackPanel>
+        <Button x:Name="valider" Content="Valider" Click="valider_Click" Margin="0,489,-40.2,1"/>
+    </Grid>
+</Window>

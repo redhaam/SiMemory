@@ -1,0 +1,59 @@
+﻿<Window x:Class="SimulationInterface.InfoPartVariable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationInterface"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="InfoPartVariable" Height="600" Width="600"  WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-0.4,0.4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="195*"/>
+            <RowDefinition Height="374*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Chip Margin="42,67,0,275" Width="139" Grid.Row="1">
+            Algorithme
+        </materialDesign:Chip>
+        <ComboBox
+  materialDesign:HintAssist.Hint="First Fit" Margin="221,53,69,275" Height="46" Grid.Row="1">
+            <ComboBoxItem>
+                First Fit
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Next Fit
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Best Fit
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Worst Fit
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Buddy system
+            </ComboBoxItem>
+        </ComboBox>
+
+        <materialDesign:Chip Margin="42,130,0,33" Width="139">
+            Taille mémoire
+        </materialDesign:Chip>
+        <TextBox
+  materialDesign:HintAssist.Hint="100"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="221,114,69,33" />
+
+        <Button
+    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="283,251,92,70" Height="Auto"  Click="Button_Click" Grid.Row="1">
+            Appliquer
+        </Button>
+
+
+
+    </Grid>
+</Window>

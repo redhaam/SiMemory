@@ -1,0 +1,132 @@
+﻿<Page x:Class="SimulationInterface.SimPartVariable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SimulationInterface"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      d:DesignHeight="900" d:DesignWidth="1400"
+      Title="SimPartVariable">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="214*"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Chip Margin="26,31,0,46" Width="154" Content="First Fit" Height="Auto" RenderTransformOrigin="0.479,0.634" Grid.Row="1">
+        </materialDesign:Chip>
+        <materialDesign:Card
+                   materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    Padding="32" Height="692" Margin="16,31,396,0" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+            Memoire
+        </materialDesign:Card>
+
+        <TextBox
+        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+        Text="Temps d'exécution&#xD;&#xA;" Margin="26,11,30,306" RenderTransformOrigin="0.503,-0.633" Grid.Row="3">
+            <materialDesign:HintAssist.Hint>
+                <StackPanel
+        Orientation="Horizontal"
+         Margin="0 0 0 0">
+                    <materialDesign:PackIcon
+        Kind="AccessPoint" />
+                    <TextBlock>
+                        Temps d'éxecution
+
+                    </TextBlock>
+                </StackPanel>
+            </materialDesign:HintAssist.Hint>
+        </TextBox>
+
+        <TextBox
+        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+        Text="Taille du Processus&#xD;&#xA;" Margin="26,127,30,181" Grid.Row="3">
+            <materialDesign:HintAssist.Hint>
+                <StackPanel
+        Orientation="Horizontal"
+         Margin="0 0 0 0">
+                    <materialDesign:PackIcon
+        Kind="AccessPoint" />
+                    <TextBlock>
+             Taille du processus
+                    </TextBlock>
+                </StackPanel>
+            </materialDesign:HintAssist.Hint>
+        </TextBox>
+        <Button
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+  ToolTip="MaterialDesignFloatingActionDarkButton" Margin="246,311,76,59" Height="Auto" Width="Auto" RenderTransformOrigin="-0.419,0.694" Grid.Row="3">
+            <materialDesign:PackIcon
+                Kind="Plus"
+                Height="24"
+                Width="24" />
+        </Button>
+
+        <Button
+        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+        materialDesign:RippleAssist.Feedback="#DD000000" Margin="207,35,8,47" Height="Auto"  Click="Button_Click" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.354"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.744"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            Changer l'algorithme
+        </Button>
+
+
+        <GroupBox
+            Header="Statistiques"
+            Style="{DynamicResource MaterialDesignGroupBox}"
+            Margin="668,31,25,141"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            BorderThickness="0" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1">
+        </GroupBox>
+
+        <Slider
+            TickFrequency="5"
+            Orientation="Horizontal"
+            TickPlacement="BottomRight"
+            Minimum="1"
+            Maximum="50"
+            Value="25"
+            IsSelectionRangeEnabled="True" Margin="80,344,456,10" RenderTransformOrigin="0.486,0.296" Grid.Row="3" Grid.Column="1" />
+
+        <GroupBox
+            Header="Déroulement"
+            Style="{DynamicResource MaterialDesignGroupBox}"
+            Margin="668,247,25,131"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            BorderThickness="0" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+            <TextBlock              
+            Margin="0,0,0,2"
+            TextWrapping="Wrap" Width="254" Text="Short loin picanha boudin pork belly. Ground round porchetta biltong, cow t-bone tri-tip strip steak chuck filet mignon jowl turducken. Landjaeger strip steak pork chop, jowl sirloin pork capicola andouille. Kevin ribeye tongue, drumstick hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon.pork capicola andouille. Kevin ribeye tongue, drumstick hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon." />
+        </GroupBox>
+
+
+    </Grid>
+</Page>
