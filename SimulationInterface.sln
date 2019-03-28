@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationInterface", "Simu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3692C32C-232A-43D9-B9DC-A2469EF883B3}"
 	ProjectSection(SolutionItems) = preProject
+		tempsnip.png = tempsnip.png
+		tempsnip2.png = tempsnip2.png
 		SimulationInterface\images\x.png = SimulationInterface\images\x.png
 		SimulationInterface\images\y.gif = SimulationInterface\images\y.gif
 		SimulationInterface\images\z.jpg = SimulationInterface\images\z.jpg
