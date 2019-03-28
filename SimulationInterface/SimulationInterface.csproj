@@ -85,6 +85,31 @@
     <Compile Include="SimPartVariable.xaml.cs">
       <DependentUpon>SimPartVariable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TransitionsDemo\Slide1_Intro.xaml.cs">
+      <DependentUpon>Slide1_Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide2_Intro.xaml.cs">
+      <DependentUpon>Slide2_Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide3_Intro.xaml.cs">
+      <DependentUpon>Slide3_Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide4_CombineTransitions.xaml.cs">
+      <DependentUpon>Slide4_CombineTransitions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide5_TransitioningContent.xaml.cs">
+      <DependentUpon>Slide5_TransitioningContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide6_Origins.xaml.cs">
+      <DependentUpon>Slide6_Origins.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide7_MasterModel.cs" />
+    <Compile Include="TransitionsDemo\Slide7_MVVM.xaml.cs">
+      <DependentUpon>Slide7_MVVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransitionsDemo\Slide8_Details.xaml.cs">
+      <DependentUpon>Slide8_Details.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -153,6 +178,38 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TransitionsDemo\Slide1_Intro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide2_Intro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide3_Intro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide4_CombineTransitions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide5_TransitioningContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide6_Origins.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide7_MVVM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TransitionsDemo\Slide8_Details.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -197,6 +254,17 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\x.png" />
+    <Resource Include="Image\y.gif" />
+    <Resource Include="Image\z.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tempsnip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tempsnip2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
