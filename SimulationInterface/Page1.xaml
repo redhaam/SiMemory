@@ -267,7 +267,7 @@
 
             <TextBox x:Name="Delay" Canvas.Left="164" TextWrapping="Wrap" Canvas.Top="19" Margin="433,549,1009,288"  />
             <TextBlock x:Name="error" HorizontalAlignment="Left" Margin="629,731,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="296" FontWeight="Bold" FontSize="12" Foreground="Red" Text=""/>
-            <Rectangle HorizontalAlignment="Left" Height="51" Margin="664,89,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="220" Fill="#8bc34a" Stroke="#FF525858" RadiusX="5" RadiusY="5"/>
+            <Rectangle HorizontalAlignment="Left" Height="51" Margin="664,89,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="220" Fill="#fdd835" Stroke="#FF525858" RadiusX="5" RadiusY="5"/>
             <TextBlock HorizontalAlignment="Left" Margin="758,103,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Height="34" Width="51" FontSize="24" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="388,489,0,0" TextWrapping="Wrap" Text="Taille" VerticalAlignment="Top" Width="45" Height="16"/>
             <TextBlock HorizontalAlignment="Left" Margin="388,561,0,0" TextWrapping="Wrap" Text="Temps" VerticalAlignment="Top" Width="65" Height="21"/>
@@ -306,7 +306,7 @@
             <Rectangle Height="435" Canvas.Left="72"  Canvas.Top="0" Width="218" Stroke="#FF525858" StrokeThickness="3" RenderTransformOrigin="0.5,0.5" RadiusX="8" RadiusY="8" >
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#0097a7" Offset="1"/>
+                        <GradientStop Color="#ffe082" Offset="1"/>
                         <GradientStop Color="#0097a7"/>
                         <GradientStop Color="#0097a7" Offset="1"/>
                         <GradientStop Color="#0097a7" Offset="0.003"/>

@@ -5,9 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <materialDesign:ColorZone Mode="Dark" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+             mc:Ignorable="d" Height="318" Width="1058">
+    <materialDesign:ColorZone Mode="Dark" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="318">
         <Grid Margin="64">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -16,7 +15,7 @@
             </Grid.RowDefinitions>
             <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap">You can combine some transition effects too.  Did you see how this page slid in from the bottom and left?</TextBlock>
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" TextWrapping="Wrap" Grid.Row="1">Next we will look at some granular transitions on individual elements.</TextBlock>
-            <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,2">
                 <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
                     Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"
                     VerticalAlignment="Center" HorizontalAlignment="Left" 

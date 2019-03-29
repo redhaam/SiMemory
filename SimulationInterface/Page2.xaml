@@ -155,8 +155,8 @@
             <TextBlock x:Name="num_text" HorizontalAlignment="Left" Margin="1170,743,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Foreground="White" FontSize="20" TextAlignment="Center" Width="30" Height="27" FontWeight="Bold"/>
             <Button Content="&lt;" HorizontalAlignment="Left" Margin="1060,744,0,0" VerticalAlignment="Top" Width="45" FontWeight="Bold" FontSize="20" Background="#00acc1" Click="Button_Click_4" BorderBrush="{x:Null}" Foreground="White" Height="32"/>
             <TextBlock x:Name="titre" HorizontalAlignment="Left" Margin="606,312,0,0" TextWrapping="Wrap" Text="SIMemory" VerticalAlignment="Top" Width="200" Foreground="#006978" FontSize="36" FontWeight="Bold"/>
-            <Canvas x:Name="param1" HorizontalAlignment="Left" Height="340" Margin="325,110,0,0" VerticalAlignment="Top" Width="180">
-                <ListBox x:Name="algo" Height="156" Canvas.Left="560" Canvas.Top="45" Width="150" BorderBrush="#FF070707">
+            <Canvas x:Name="param1" HorizontalAlignment="Left" Height="670" Margin="325,110,0,0" VerticalAlignment="Top" Width="145">
+                <ListBox x:Name="algo" Height="156" Canvas.Top="417" Width="150" BorderBrush="#FF070707">
                     <TextBlock Text="First Fit" FontWeight="Bold" FontSize="16"/>
                     <TextBlock Text="Best Fit" FontWeight="Bold" FontSize="16"/>
                     <TextBlock Text="Worst Fit" FontWeight="Bold" FontSize="16"/>
@@ -200,7 +200,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="1110,110,0,0" TextWrapping="Wrap" Text="Etat de la mémoire" VerticalAlignment="Top" Height="35" Width="256" FontSize="16" TextAlignment="Center" Foreground="#FFF1EFEF" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,103,0,0" TextWrapping="Wrap" Text="liste des processus" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFF1EFEF" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFEDEDF0" FontWeight="Bold"><Run Text="Statistiques de"/><Run Text="s processus"/></TextBlock>
-            <Button x:Name="choix" Content="Choisir" HorizontalAlignment="Left" Margin="894,335,0,0" VerticalAlignment="Top" Width="120" Height="42" Background="#80deea" Foreground="#FF3E3E42" BorderBrush="{x:Null}" FontSize="22" FontWeight="Bold" Click="Choix_Click"/>
+            <Button x:Name="choix" Content="Choisir" HorizontalAlignment="Left" Margin="335,680,0,0" VerticalAlignment="Top" Width="120" Height="42" Background="#80deea" Foreground="#FF3E3E42" BorderBrush="{x:Null}" FontSize="22" FontWeight="Bold" Click="Choix_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="540,660,0,0" TextWrapping="Wrap" Text="Contrôleur de vitesse " VerticalAlignment="Top" Height="26" Width="330" Background="#aed581" FontSize="14" FontWeight="Bold" TextAlignment="Center" Foreground="Black" />
             <TextBlock HorizontalAlignment="Left" Margin="870,635,0,0" TextWrapping="Wrap" Text="Lent" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="25" Width="50" TextAlignment="Center" Foreground="#FF3E3E42"/>
             <TextBlock HorizontalAlignment="Left" Margin="475,635,0,0" TextWrapping="Wrap" Text="Rapide" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="25" Width="60" TextAlignment="Center" Foreground="#FF3E3E42"/>
