@@ -266,6 +266,14 @@
   <ItemGroup>
     <Resource Include="Image\tempsnip2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\board-card.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\chips-circuit-board-computer-4316.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\base-board-chips-825263.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

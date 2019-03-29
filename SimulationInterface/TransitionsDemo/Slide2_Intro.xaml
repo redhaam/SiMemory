@@ -11,11 +11,11 @@
               MaxWidth="600">
             <Grid.RowDefinitions>
                 <RowDefinition />
-                <RowDefinition />                
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="32"
+            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="40,0,24,14"
                        Style="{DynamicResource MaterialDesignHeadlineTextBlock}"
-                       TextWrapping="Wrap">
+                       TextWrapping="Wrap" Grid.RowSpan="2">
                 The transition will originate from where the user clicks the button.  Experiment with the back/forward buttons.
             </TextBlock>
             <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
@@ -31,6 +31,6 @@
                     >
                 <materialDesign:PackIcon Kind="StepForward" />
             </Button>
-        </Grid>                
+        </Grid>
     </materialDesign:ColorZone>
 </UserControl>

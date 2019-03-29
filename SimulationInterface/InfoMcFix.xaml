@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="InfoMcFix" Height="660" Width="600" WindowStartupLocation="CenterScreen">
+        Title="InfoMcFix" Height="673" Width="596" WindowStartupLocation="CenterScreen">
 
 
 
@@ -42,7 +42,7 @@
         Background="{DynamicResource PrimaryHueDarkBrush}"
         Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
         Padding="8"
-        UniformCornerRadius="6" Height="31" Margin="0,-5,0,0">
+        UniformCornerRadius="6" Height="55" Margin="0,-29,0,0">
             <TextBlock
        TextWrapping="Wrap" Text="Données" Margin="10,0,81,-6">
 
@@ -98,7 +98,7 @@
 
         </materialDesign:Chip>
         <Button
-    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="374,101,52,20" Height="Auto"  Click="Button_Click" Grid.Row="5" Content="Appliquer">
+    Style="{DynamicResource MaterialDesignRaisedButton}" Margin="374,53,52,68" Height="Auto"  Click="Button_Click" Grid.Row="5" Content="Appliquer">
 
         </Button>
 

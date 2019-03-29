@@ -21,16 +21,18 @@
 
     <Grid>
         <Canvas Margin="120,95,155,136">
+            <Image Image.Source="Image/base-board-chips-825263.jpg" Height="1175" Canvas.Left="-255" Width="1625" Canvas.Top="-284"/>
 
             <materialDesign:Card
-    materialDesign:ShadowAssist.ShadowDepth="Depth3"
-    Padding="32" VerticalAlignment="Stretch" Height="577" Canvas.Left="47" Canvas.Top="26" Width="969">
+    materialDesign:ShadowAssist.ShadowDepth="Depth5" 
+    Padding="32" VerticalAlignment="Stretch" Height="555" Canvas.Left="80" Canvas.Top="10" Width="984" Background="#eceff1">
+
                 <Image Image.Source="Image/tempsnip.png" Margin="240,10,243,257"/>
             </materialDesign:Card>
 
 
             <TextBlock
-                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="289" Canvas.Top="396">
+                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="217" Canvas.Top="358">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -42,7 +44,7 @@
 
 
             <TextBlock
-    Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="58" Canvas.Top="340" Width="949">
+    Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="108" Canvas.Top="312" Width="937">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
