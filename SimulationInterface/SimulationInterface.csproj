@@ -275,5 +275,8 @@
   <ItemGroup>
     <Resource Include="Image\base-board-chips-825263.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="y.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -73,7 +73,7 @@ namespace SimulationInterface
                 }
                 catch (Exception)
                 {
-                    Error.Text = "Taille plus grand que la capacite max de la Ram";
+                    Error.Text = "Taille plus grand que la capacité max de la mémoire";
                     Ajout.Fill = new SolidColorBrush(Colors.Red);
                     ColorAnimation myColorAnimation = new ColorAnimation(Colors.Red, Color.FromRgb(241, 239, 239), TimeSpan.FromMilliseconds(4000));
                     Error.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, myColorAnimation);
@@ -329,6 +329,26 @@ namespace SimulationInterface
         private void Choix_Click(object sender, RoutedEventArgs e)
         {
             P = algo.SelectedIndex;
+            switch (P)
+            {
+
+                case 0:
+                    Algorithme.Text = "First Fit";
+                    break;
+                case 1:
+                    Algorithme.Text = "Best Fit";
+                    break;
+
+                case 2:
+                    Algorithme.Text = "Worst Fit";
+                    break;
+                default:
+                    Algorithme.Text = "First Fit";
+                    break;
+
+
+            }
+
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
