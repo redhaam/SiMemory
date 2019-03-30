@@ -25,7 +25,7 @@
 
             <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth5" 
-    Padding="32" VerticalAlignment="Stretch" Height="555" Canvas.Left="80" Canvas.Top="10" Width="984" Background="#eceff1">
+    Padding="32" VerticalAlignment="Stretch" Height="555" Canvas.Left="60" Canvas.Top="10" Width="984" Background="#eceff1">
 
                 <Image Image.Source="Image/tempsnip.png" Margin="240,10,243,257"/>
             </materialDesign:Card>
@@ -56,7 +56,7 @@
 
             <Button
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="46" Click="Button_Click" Canvas.Left="460" Canvas.Top="470" Width="146">
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="46" Click="Button_Click" Canvas.Left="480" Canvas.Top="420" Width="146">
                 Commencer
             </Button>
         </Canvas>

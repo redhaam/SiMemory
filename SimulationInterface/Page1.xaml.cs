@@ -13,8 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
-
-
+using System.Text.RegularExpressions;
 
 namespace SimulationInterface
 {
@@ -51,7 +50,7 @@ namespace SimulationInterface
             un_plus = un_p;
             proc.Set_alg(alg);
             
-            
+
 
 
         }
@@ -186,27 +185,37 @@ namespace SimulationInterface
 
         private void Add_Pro_Click(object sender, RoutedEventArgs e)
         {
-            if (m != null)
+            if (m != null )
             {
-            TextBox a = Taille;
-            int T = Convert.ToInt32(a.Text);
-            TextBox b = Delay;
-            int D = Convert.ToInt32(b.Text);
-            cn.Children.Clear();
-            if (un_plus == 0)
-            {
-                proc.add_process(T, D, m);
-                proc.CreateACircle_2(m, cn);
-            }
-            else
-            {
-                proc.Add_Fifo(T, D); proc.CreateACircle(proc.fifo, cn);
-            }
-            m.afficher(cn, proc);
-            Sta.Children.Clear();
-            proc.afficher_encours(Sta, choix_process);
-            }
-            else { error.Text = "ATTENTION : Initializez la Memoire !"; }
+                TextBox a = Taille;
+                TextBox b = Delay;
+                int T = 1;
+                if ((a.Text != "") && (b.Text != "") && (b.Text != "0") &&(a.Text != "0"))
+                {
+                    T = Convert.ToInt32(a.Text);
+                    int D = 1;
+                    if (b.Text != "") D = Convert.ToInt32(b.Text);
+
+                    cn.Children.Clear();
+                    if (un_plus == 0)
+                    {
+                        proc.add_process(T, D, m);
+                        proc.CreateACircle_2(m, cn);
+                    }
+                    else
+                    {
+                        proc.Add_Fifo(T, D); proc.CreateACircle(proc.fifo, cn);
+                    }
+                    m.afficher(cn, proc);
+                    Sta.Children.Clear();
+                    proc.afficher_encours(Sta, choix_process);
+                }
+                else
+                {
+                    Error.Text= "Un champ est vide ou égal à zéro!"; }
+                }
+            
+            else { Error.Text = "ATTENTION : Initializez la Memoire !"; }
                 
 
 
@@ -286,7 +295,15 @@ namespace SimulationInterface
             }
         }
 
-       
+        private void Taille_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void Delay_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
     }
 
 

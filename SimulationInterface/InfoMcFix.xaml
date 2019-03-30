@@ -55,7 +55,7 @@
         <TextBox Grid.Row="3"
   x:Name="nbpart"          
   materialDesign:HintAssist.Hint="10"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="197,19,93,28.2" TextChanged="nbpart_TextChanged" />
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="197,19,93,28.2" TextChanged="nbpart_TextChanged" PreviewTextInput="Nbpart_PreviewTextInput" />
 
         <materialDesign:Chip Margin="26,26.4,0,12.4" Width="139" Height="Auto" Grid.Row="1" Content="Files d'attente">
 
@@ -92,7 +92,7 @@
         <TextBox
   x:Name="taimem"          
   materialDesign:HintAssist.Hint="100"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="194,54,96,9.6" />
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="194,54,96,9.6" PreviewTextInput="Taimem_PreviewTextInput" />
 
         <materialDesign:Chip Margin="58,71,0,10" Height="Auto" Grid.Row="4" Width="482" Content="Taille des partitions">
 
@@ -101,6 +101,8 @@
     Style="{DynamicResource MaterialDesignRaisedButton}" Margin="374,53,52,68" Height="Auto"  Click="Button_Click" Grid.Row="5" Content="Appliquer">
 
         </Button>
+        <TextBlock x:Name="Error"  Height="48" Margin="58,53,366,0" Grid.Row="5" TextWrapping="Wrap"  VerticalAlignment="Top" Width="168" FontWeight="Bold"/>
+
 
 
 
