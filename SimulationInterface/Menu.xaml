@@ -99,7 +99,7 @@
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="28,167,212,72" Grid.Row="1" Click="Button_Click_2" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="28,167,198,72" Grid.Row="1" Click="Button_Click_2" Height="Auto">
                     Simulation
                 </Button>
                 <Button
