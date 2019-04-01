@@ -47,5 +47,12 @@ namespace SimulationInterface
         {
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            NavigationService ns = NavigationService.GetNavigationService(this);
+            ns.Navigate(new Uri("MemoireVirtuelle.xaml", UriKind.Relative));
+
+        }
     }
 }

@@ -63,6 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Case.cs" />
+    <Compile Include="DiskDur.cs" />
+    <Compile Include="EntreeTablePage.cs" />
+    <Compile Include="Mmu.cs" />
+    <Compile Include="Part.cs" />
+    <Compile Include="MemoireVirtuelle.xaml.cs">
+      <DependentUpon>MemoireVirtuelle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="RAM.cs" />
     <Compile Include="InfoPartVariable.xaml.cs">
@@ -80,11 +88,13 @@
     <Compile Include="partition.cs" />
     <Compile Include="processus.cs" />
     <Compile Include="process_list.cs" />
+    <Compile Include="RamVirtuelle.cs" />
     <Compile Include="RAM_fix.cs" />
     <Compile Include="RAM_var.cs" />
     <Compile Include="SimPartVariable.xaml.cs">
       <DependentUpon>SimPartVariable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SystemExploitation.cs" />
     <Compile Include="TransitionsDemo\Slide1_Intro.xaml.cs">
       <DependentUpon>Slide1_Intro.xaml</DependentUpon>
     </Compile>
@@ -167,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MemoireVirtuelle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
