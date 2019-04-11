@@ -61,18 +61,18 @@ namespace SimulationInterface
             oTable.RowGroups.Add(new TableRowGroup());
             oTable.RowGroups[0].Rows.Add(new TableRow());
             TableRow currentRow = oTable.RowGroups[0].Rows[0];
-            currentRow.Background = System.Windows.Media.Brushes.Navy;
-            currentRow.Foreground = System.Windows.Media.Brushes.White;
-            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse virtuelle"))));
-            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse physique"))));
-            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Bit de validité"))));
-            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("bit de modification"))));
+            currentRow.Background = Brushes.Navy;
+            currentRow.Foreground = Brushes.White;
+            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse \nvirtuelle"))));
+            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse \nphysique"))));
+            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Bit de \nvalidité"))));
+            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("bit de \nmodification"))));
 
             int i = 0;
             foreach (EntreeTablePage e in tablePages)
             {
-                currentRow.Background = System.Windows.Media.Brushes.White;
-                currentRow.Foreground = System.Windows.Media.Brushes.Black;
+                currentRow.Background = Brushes.White;
+                currentRow.Foreground = Brushes.Black;
                 oTable.RowGroups[0].Rows.Add(new TableRow());
                 currentRow = oTable.RowGroups[0].Rows[i + 1];
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(i)))));
@@ -81,7 +81,8 @@ namespace SimulationInterface
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(Convert.ToInt32(e.getDirty()))))));
                 i++;
             }
-
+            currentRow.Background = Brushes.White;
+            currentRow.Foreground = Brushes.Black;
             documentReader.Document = oDoc;
             documentReader.Width = 400;
             tPages.Content = documentReader;
@@ -258,21 +259,45 @@ namespace SimulationInterface
 
         private void affichMatriceAging()
         {
+             FlowDocumentScrollViewer docr = new FlowDocumentScrollViewer();
+            Table table = new Table();
+             FlowDocument ag = new FlowDocument();
 
-            TextBlock mat = new TextBlock();
-            mat.Text = "";
+             ag.Blocks.Add(table);
+            table.Columns.Add(new TableColumn());
+            table.Columns[0].Width = new GridLength(30);
+
+            table.Columns.Add(new TableColumn());
+            table.Columns[1].Width = new GridLength(400);
+            
+            table.RowGroups.Add(new TableRowGroup());
+            table.RowGroups[0].Rows.Add(new TableRow());
+            TableRow currentRow = table.RowGroups[0].Rows[0];
+
+
+
+
+            int i = 0;
             foreach (int e in systemExploitation.aging)
             {
-                mat.FontSize = 16;
-                mat.Text += "\n" + String.Join("", Enumerable.Repeat<String>("0", 31 - (Convert.ToString(e, 2).Length)).ToList<String>()) + Convert.ToString(e, 2);
+                currentRow.Foreground = Brushes.Black;
+                currentRow.Background = Brushes.White;
+                table.RowGroups[0].Rows.Add(new TableRow());
+                currentRow = table.RowGroups[0].Rows[i + 1];
+                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(i)))));
+                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(String.Join("", Enumerable.Repeat<String>("0", 31 - (Convert.ToString(e, 2).Length)).ToList<String>()) + Convert.ToString(e, 2)))));
+                i++;
             }
+            currentRow.Background = Brushes.White;
+            currentRow.Foreground = Brushes.Black;
+            docr.Document = ag;
+            docr.Width = 400;
+            docr.VerticalScrollBarVisibility = 0;
 
-            double xx = 0;
-            double y = 0;
             aux.Children.Clear();
-            aux.Children.Add(mat);
-            Canvas.SetLeft(mat, xx);
-            Canvas.SetTop(mat, y);
+            aux.Children.Add(docr);
+            Canvas.SetLeft(docr, 0);
+            Canvas.SetTop(docr, 0);
 
         }
 
@@ -306,28 +331,44 @@ namespace SimulationInterface
 
             {
                 tbl.Columns.Add(new TableColumn());
-                tbl.Columns[x].Width = new GridLength(20);
+                tbl.Columns[x].Width = new GridLength(50);
             }
             tbl.RowGroups.Add(new TableRowGroup());
             tbl.RowGroups[0].Rows.Add(new TableRow());
-            TableRow currentRow;
-            int i = 0;
+            TableRow currentRow = tbl.RowGroups[0].Rows[0]; ;
+
             double xx = 0;
             double y = 0;
-            foreach (int[] f in systemExploitation.lfu)
+            List<int[]> tompo = new List<int[]>(systemExploitation.lfu);
+                tompo.Sort((x,yx)=> x[0].CompareTo(yx[0]));
+            for (int ind = 0; ind < nbPages; ind++)
             {
-                currentRow = tbl.RowGroups[0].Rows[i];
-                currentRow.Background = System.Windows.Media.Brushes.White;
-                currentRow.Foreground = System.Windows.Media.Brushes.Black;
+                currentRow = tbl.RowGroups[0].Rows[ind];
+                currentRow.Foreground = Brushes.Black;
+                currentRow.Background = Brushes.White;
                 tbl.RowGroups[0].Rows.Add(new TableRow());
-                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(tablePages.FindIndex(t => t.getPageCorrespandante() == f[0] && t.getDisponible() == true))))));
-                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(f[1])))));
-                i++;
-            }
+                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(ind.ToString()))));
+                currentRow.Cells.Add(new TableCell(new Paragraph(new Run("0"))));
 
+            }
+            int i = 0;
+            //    foreach (int[] f in tompo)
+            //{
+
+            //    currentRow = tbl.RowGroups[0].Rows[i];
+            //    currentRow.Foreground = Brushes.Black;
+            //    if (i == f[0]) currentRow.Cells.Add( new TableCell(new Paragraph(new Run(f[1].ToString()))))  ;
+            //  //  currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(tablePages.FindIndex(t => t.getPageCorrespandante() == f[0] && t.getDisponible() == true))))));
+            //    //currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(f[0]==i?f[1]:0)))));
+            //    i++;
+            //}
+            currentRow.Foreground = Brushes.Black;
+            currentRow.Background = Brushes.White;
             auxr.Document = lfuDoc;
             auxr.Width = 60;
             auxr.VerticalScrollBarVisibility = 0;
+            auxr.Document = lfuDoc;
+            aux.Children.Clear();
             aux.Children.Add(auxr);
             Canvas.SetLeft(auxr, xx);
             Canvas.SetTop(auxr, y);
@@ -512,6 +553,10 @@ namespace SimulationInterface
                                 }
 
                                 break;
+
+                            case 2:
+                                affichLfu();
+                                break;
                             case 3:
                                 affichMatriceAging();
                                 break;
@@ -528,10 +573,10 @@ namespace SimulationInterface
                         {
                             Fill = Brushes.Gray,
                             Opacity = 0.2,
-                            Height = 800,
-                            Width = 1400
+                            Height = gri.Height,
+                            Width = gri.Width
                         };
-                        canvas1.Children.Add(rectangle);
+                        gri.Children.Add(rectangle);
                         Canvas.SetLeft(rectangle, 0);
                         Canvas.SetTop(rectangle, 0);
                     }
@@ -565,6 +610,9 @@ namespace SimulationInterface
             diskDur = new DiskDur(5);
             tablePages = new List<EntreeTablePage>();
             majTablePage();
+            lancer.IsEnabled = true;
+            sauvSuite = suiteReferences.Text;
+            suivant.IsEnabled = true;
             systemExploitation.creationTablePages(tablePages, 2*nbPages, ram, diskDur);
             aux.Children.Clear();
             canvas1.Children.Clear();
@@ -596,6 +644,11 @@ namespace SimulationInterface
                 requete = (List<String>)tmp[4];
                 sauvSuite = (String)tmp[5];
                 afficherRam(ram);
+                champAdressePhysique.Text = "";
+                champAux.Text = "";
+                champRam.Text = "";
+                champTPages.Text = "";
+                demande.Text = "Demande de l'adresse virtuelle: "  ;
                 deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
                 switch (choixAlgorithme.SelectedIndex)
                 {
@@ -603,13 +656,13 @@ namespace SimulationInterface
                         suppFileLru();
                         if (tmpOs.fileLru.Count == systemExploitation.fileLru.Count && tmpOs.fileLru.Peek() != systemExploitation.fileLru.Peek())
                         {
-                            double y = 100;
+                            double y = 0;
                             Ellipse ellipse = new Ellipse()
                             { Height = 30, Width = 30, Fill = Brushes.Cyan };
 
                             TextBlock num = new TextBlock
                             { Text = tablePages.FindIndex(h => h.getPageCorrespandante() == systemExploitation.fileLru.Peek() && h.getDisponible() == true).ToString(), FontSize = 14 };
-                            double x = 100 + (aux.Children.Count / 2) * (ellipse.Width + 10);
+                            double x =  (aux.Children.Count / 2) * (ellipse.Width + 10);
                             aux.Children.Insert(0, ellipse);
                             Canvas.SetLeft(ellipse, x);
                             Canvas.SetTop(ellipse, y);
@@ -622,13 +675,13 @@ namespace SimulationInterface
                         suppFileFifo();
                         if (tmpOs.fifo.Count == systemExploitation.fifo.Count && tmpOs.fifo.Peek() != systemExploitation.fifo.Peek())
                         {
-                            double y = 100;
+                            double y = 0;
                             Ellipse ellipse = new Ellipse()
                             { Height = 30, Width = 30, Fill = Brushes.Cyan };
 
                             TextBlock num = new TextBlock
                             { Text = tablePages.FindIndex(h => h.getPageCorrespandante() == systemExploitation.fifo.Peek() && h.getDisponible() == true).ToString(), FontSize = 14 };
-                            double x = 100 + (aux.Children.Count / 2) * (ellipse.Width + 10);
+                            double x =  (aux.Children.Count / 2) * (ellipse.Width + 10);
                             aux.Children.Insert(0, ellipse);
                             Canvas.SetLeft(ellipse, x);
                             Canvas.SetTop(ellipse, y);
@@ -636,6 +689,9 @@ namespace SimulationInterface
                             Canvas.SetLeft(num, x + ellipse.Height / 2 - num.FontSize / 2 + 1);
                             Canvas.SetTop(num, y + ellipse.Width / 2 - num.FontSize / 2);
                         }
+                        break;
+                    case 2:
+                        affichLfu();
                         break;
                     case 3:
                         affichMatriceAging();
