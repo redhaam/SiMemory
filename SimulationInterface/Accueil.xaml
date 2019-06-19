@@ -27,12 +27,17 @@
     materialDesign:ShadowAssist.ShadowDepth="Depth5" 
     Padding="32" VerticalAlignment="Stretch" Height="555" Canvas.Left="60" Canvas.Top="10" Width="984" Background="#eceff1">
 
-                <Image Image.Source="Image/tempsnip.png" Margin="240,10,243,257"/>
+                <Image Image.Source="Image/tempsnip.png" Margin="316,10,347,257"/>
             </materialDesign:Card>
+            <Image Image.Source="Image/simemory.png" Canvas.Left="614" Canvas.Top="198" Width="196" RenderTransformOrigin="0.657,0.288" Height="81"/>
+
+
+
+
 
 
             <TextBlock
-                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="217" Canvas.Top="358">
+                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="181" Canvas.Top="362" Width="714" Height="46">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -40,7 +45,17 @@
                         <RotateTransform/>
                         <TranslateTransform X="3.935"/>
                     </TransformGroup>
-                </TextBlock.RenderTransform><Run Text="et "/><Run Text="les "/><Run Text="concepts vue"/><Run Text="s"/><Run Text=" en cours de système d'exploitation."/></TextBlock>
+                </TextBlock.RenderTransform><Run Text=" de gestion de la mémoire centrale par un système d'exploitation"/></TextBlock>
+            <TextBlock
+                Style="{StaticResource MaterialDesignHeadlineTextBlock}" RenderTransformOrigin="0.5,0.5" Canvas.Left="459" Canvas.Top="410" Width="145" Height="38">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="3.721"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="3.935"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="multitâches."/></TextBlock>
 
 
             <TextBlock
@@ -52,11 +67,11 @@
                         <RotateTransform/>
                         <TranslateTransform X="3.935"/>
                     </TransformGroup>
-                </TextBlock.RenderTransform><Run Text="SIMemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions"/><LineBreak/><Run Text=" "/></TextBlock>
+                </TextBlock.RenderTransform><Run Text="SIMemory est un outil de simulation visuel du fonctionnement des algorithmes "/><LineBreak/><Run Text=" "/></TextBlock>
 
             <Button
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="46" Click="Button_Click" Canvas.Left="480" Canvas.Top="420" Width="146">
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Height="46" Click="Button_Click" Canvas.Left="470" Canvas.Top="466" Width="146">
                 Commencer
             </Button>
         </Canvas>

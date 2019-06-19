@@ -16,7 +16,7 @@
             <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="40,0,24,14"
                        Style="{DynamicResource MaterialDesignHeadlineTextBlock}"
                        TextWrapping="Wrap" Grid.RowSpan="2">
-                The transition will originate from where the user clicks the button.  Experiment with the back/forward buttons.
+                <Run Text="Simemory est un logiciel de simulation qui vous permettra de mieux assimiler les notions vues en Système"></Run>
             </TextBlock>
             <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
                     Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"

@@ -292,5 +292,8 @@
   <ItemGroup>
     <Resource Include="y.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\simemory.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
