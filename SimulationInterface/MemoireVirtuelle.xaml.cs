@@ -21,7 +21,8 @@ namespace SimulationInterface
     public partial class MemoireVirtuelle : Page
     {
         private int nbPages = 5;
-        private int vitesse = 1000;
+        private int etape = 0;
+        private long vitesse = 1000;
         private int iteration;
         private SystemExploitation systemExploitation = new SystemExploitation();
         private RamVirtuelle ram = new RamVirtuelle(5);
@@ -30,43 +31,91 @@ namespace SimulationInterface
         private List<String> requete = new List<String>();
         private Stack<List<object>> sequence = new Stack<List<object>>();
         private String sauvSuite = "";
+        
         private FlowDocumentScrollViewer documentReader = new FlowDocumentScrollViewer();
-        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer(DispatcherPriority.Normal);
-        //System.Threading.Timer timer = new System.Threading.Timer(_ => te(), null, 1000 * 10, Timeout.Infinite);
+        System.Timers.Timer timer = new System.Timers.Timer();
         private Table oTable = new Table();
-        private FlowDocument oDoc = new FlowDocument();
+        private FlowDocument oDoc = new FlowDocument()
+        { TextAlignment = TextAlignment.Center };
         public MemoireVirtuelle()
         {
-
+           //documentReader.li
             InitializeComponent();
             systemExploitation.creationTablePages(tablePages, 2 * nbPages, ram, diskDur);
             afficherRam(ram);
             affichTablePage();
+            affichMemVirtuelle();
 
 
         }
 
+
+
+        private void affichMemVirtuelle()
+        {
+            double y = 0;
+            double x = 0;
+            Rectangle shape = new Rectangle();
+            int k = 0;
+            int plc = 20;
+            double plcy = 50;
+            foreach (EntreeTablePage entree in tablePages)
+            {
+                TextBlock np = new TextBlock();
+                shape = new Rectangle();
+                shape.Height = ((1 * 500) / tablePages.Count);
+                shape.Width = 150;
+
+                x = (x + shape.Height) + 1;
+                plc += (int)shape.Height + 1;
+                if (entree.getDisponible() == true)
+                {
+                    shape.Fill = Brushes.LightCyan;
+                }
+                else
+                {
+                    shape.Fill = Brushes.DarkCyan;
+                    
+                }
+                np.FontSize = 20;
+                np.Text = k.ToString();
+                memVirtuelle.Children.Add(shape);
+                Canvas.SetLeft(shape, y);
+                Canvas.SetTop(shape, x);
+                memVirtuelle.Children.Add(np);
+                Canvas.SetLeft(np, plcy);
+                Canvas.SetTop(np, plc);
+                k++;
+            }
+
+        }
 
         private void affichTablePage()
         {
 
             oDoc.Blocks.Add(oTable);
             int numberOfColumns = 4;
-            for (int x = 0; x < numberOfColumns; x++)
+            for (int x = 0; x < numberOfColumns-1; x++)
 
             {
                 oTable.Columns.Add(new TableColumn());
                 oTable.Columns[x].Width = new GridLength(100);
             }
+            oTable.Columns.Add(new TableColumn());
+            oTable.Columns[3].Width = new GridLength(150);
             oTable.RowGroups.Add(new TableRowGroup());
             oTable.RowGroups[0].Rows.Add(new TableRow());
             TableRow currentRow = oTable.RowGroups[0].Rows[0];
             currentRow.Background = Brushes.Navy;
             currentRow.Foreground = Brushes.White;
-            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse \nvirtuelle"))));
+            currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse \nvirtuelle"))));           
             currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Adresse \nphysique"))));
             currentRow.Cells.Add(new TableCell(new Paragraph(new Run("Bit de \nvalidité"))));
             currentRow.Cells.Add(new TableCell(new Paragraph(new Run("bit de \nmodification"))));
+            //foreach(var c in currentRow.Cells)
+            //{
+            //    c.TextAlignment = TextAlignment.Center;
+            //}
 
             int i = 0;
             foreach (EntreeTablePage e in tablePages)
@@ -79,125 +128,116 @@ namespace SimulationInterface
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(e.getPageCorrespandante())))));
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(Convert.ToInt32(e.getDisponible()))))));
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(Convert.ToInt32(e.getDirty()))))));
+                //foreach (var c in currentRow.Cells)
+                //{
+                //    c.TextAlignment = TextAlignment.Center;
+                //}
+
                 i++;
             }
             currentRow.Background = Brushes.White;
             currentRow.Foreground = Brushes.Black;
             documentReader.Document = oDoc;
-            documentReader.Width = 400;
+
             tPages.Content = documentReader;
             tPages.VerticalScrollBarVisibility = 0;
         }
 
 
-        private void derouler(object sender, RoutedEventArgs e)
-        {
+        //private void derouler(object sender, RoutedEventArgs e)
+        //{
 
-            stop.IsEnabled = true;
-            suiteReferences.IsReadOnly = true;
-            if (iteration == 0)
-            {
-                sauvSuite = suiteReferences.Text;
-                requete = sauvSuite.Split(' ').ToList<String>();
-            }
-            if (iteration < suiteReferences.Text.Split(' ').Length)
-            {
-                sequence.Push(new List<object> { systemExploitation.Clone(), ram.Clone(), diskDur.Clone(), new List<EntreeTablePage>(tablePages.Select(x => x.Clone())), requete, sauvSuite });
-                if (requete.Count != 0)
-                {
-                    String r = requete[iteration];
+        //    stop.IsEnabled = true;
+        //    suiteReferences.IsReadOnly = true;
+        //    if (iteration == 0)
+        //    {
+        //        sauvSuite = suiteReferences.Text;
+        //        requete = sauvSuite.Split(' ').ToList<String>();
+        //    }
+        //    if (iteration < suiteReferences.Text.Split(' ').Length)
+        //    {
+        //        sequence.Push(new List<object> { systemExploitation.Clone(), ram.Clone(), diskDur.Clone(), new List<EntreeTablePage>(tablePages.Select(x => x.Clone())), requete, sauvSuite });
+        //        if (requete.Count != 0)
+        //        {
+        //            int r;
+        //            try
+        //            {
+        //                r = Convert.ToInt32(requete[iteration]);
+        //            }
+        //            catch (FormatException)
+        //            {
+        //                return;
+        //            }
+        //            EntreeTablePage entreeTablePage = Mmu.traductionAdresse(tablePages, r);
+        //            oTable.RowGroups[0].Rows[r].Background.BeginAnimation(BackgroundProperty, new ColorAnimation());
+        //            switch (choixAlgorithme.SelectedIndex)
+        //            {
+        //                case 3:
+        //                    affichMatriceAging();
+        //                    break;
 
+        //            }
+        //            if (entreeTablePage == null)
+        //            {
+        //                // acces page non alloué
+        //            }
+        //            else
+        //            {
+        //                if (entreeTablePage.getDisponible() == false) //defaut de page
+        //                {
+        //                    switch (choixAlgorithme.SelectedIndex)
+        //                    {
+        //                        case 0:
+        //                            if (ram.getNombrepagesLibres() == 0) //remplacement
+        //                            {
+        //                                int indRam = systemExploitation.fileLru.Peek();
+        //                                EntreeTablePage tmp = new EntreeTablePage();
+        //                                tmp = tablePages.Find(g => g.getPageCorrespandante() == indRam && g.getDisponible() == true);
+        //                                ColorAnimation animation = new ColorAnimation(Brushes.Azure, new Duration(new TimeSpan(100000)));
+        //                                oTable.RowGroups[0].Rows[tablePages.FindIndex(mo => mo == tmp)].BeginAnimation(BackgroundProperty, animation);
+        //                                oTable.RowGroups[0].Rows[tablePages.FindIndex(mo => mo == tmp)].Cells[2].BeginAnimation(ForegroundProperty, animation);
+        //                                oTable.RowGroups[0].Rows[tablePages.FindIndex(mo => mo == tmp)].Cells[2] = new TableCell(new Paragraph(new Run("0")));
+        //                                oTable.RowGroups[0].Rows[tablePages.FindIndex(mo => mo == tmp)].Cells[3] = new TableCell(new Paragraph(new Run("0")));
+        //                                oTable.RowGroups[0].Rows[r].Cells[2] = new TableCell(new Paragraph(new Run("1")));
 
-                    if (tablePages[Convert.ToInt32(r)].getDisponible() == false) //defaut de page
-                    {
-                        champTPages.Text = "page non disponible dans la memoire centrale (defaut de page)";
-                        if (ram.getNombrepagesLibres() == 0) timer.Tick += delegate (object sender1, EventArgs ev)
-                        {
-                            timer.Tick += delegate (object sender2, EventArgs evv)
-                            {
-                                majTablePage();
-                                champTPages.Text = "Mise a jour table de page";
-                                champAdressePhysique.Text = "L'adresse physique de la page " + r + ": " + tablePages[Convert.ToInt32(r)].getPageCorrespandante().ToString();
-                                if (choixAlgorithme.SelectedIndex == 1)
-                                {
-                                    champAux.Text = "Enfiler le numero de la derniere page ajouté";
-                                    ajoutFileFifo();
-                                }
-                                switch (choixAlgorithme.SelectedIndex)
-                                {
-                                    case 0:
-                                        ajoutFileLru();
-                                        break;
-                                    case 3:
-                                        affichMatriceAging();
-                                        break;
-                                }
-                                deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
-                                iteration++;
-                            };
-                            timer.Start();
+        //                                oTable.RowGroups[0].Rows[tablePages.FindIndex(mo => mo == tmp)].Cells[1] = new TableCell(new Paragraph(new Run(hdd.tableAuxiliere[indRam])));
+        //                                //hdd.tableAuxiliere[indRam] = tablePages[entree].getPageCorrespandante();
+        //                                oTable.RowGroups[0].Rows[r].Cells[1] = new TableCell(new Paragraph(new Run(Convert.ToString(indRam))));
+        //                            }
+        //                            else
+        //                            {
+        //                                int ipage = 0;
+        //                                ipage = ram.listPages.FindIndex(p => p.getVide() == true);
+        //                                int entree = tablePages.FindIndex(x => x.getPageCorrespandante() == adressePhysique);
+        //                                tablePages[entree].setDisponible(true);
+        //                                tablePages[entree].setPageCorrespandante(ipage);
+        //                                hdd.tableAuxiliere[ipage] = adressePhysique;
+        //                                ram.listPages[ipage].setVide(false);
+        //                                ram.setNombrePagesLibres(ram.getNombrepagesLibres() - 1);
 
-                        };
-                        else
-                        {
-                            champRam.Text = "Nombre de cases libres: " + ram.getNombrepagesLibres() + " allocation d'une case sans remplacement";
-                            timer.Tick += delegate (object sender1, EventArgs ev)
-                            {
-                                systemExploitation.gestionRequete(choixAlgorithme.SelectedIndex, tablePages, Convert.ToInt32(requete[iteration]), ram, diskDur);
-                                timer.Tick += delegate (object sender2, EventArgs evv)
-                                {
-                                    majTablePage();
-                                    champTPages.Text = "Mise a jour table de page";
-                                    champAdressePhysique.Text = "L'adresse physique de la page " + r + ": " + tablePages[Convert.ToInt32(r)].getPageCorrespandante().ToString();
-                                    if (choixAlgorithme.SelectedIndex == 1)
-                                    {
-                                        champAux.Text = "Enfiler le numero de la derniere page ajouté";
-                                        ajoutFileFifo();
-                                    }
-                                    switch (choixAlgorithme.SelectedIndex)
-                                    {
-                                        case 0:
-                                            ajoutFileLru();
-                                            break;
-                                        case 3:
-                                            affichMatriceAging();
-                                            break;
-                                    }
-                                    deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
-                                    iteration++;
-                                };
-                                timer.Start();
-                            };
-
-                        }
-
-                        timer.Start();
+        //                            }
+        //                            fileLru.Enqueue(entreeTablePage.getPageCorrespandante());
+        //                            break;
+        //                    }
 
 
 
-                    }
-                    else // pas de defaut
-                    {
-                        systemExploitation.gestionRequete(choixAlgorithme.SelectedIndex, tablePages, Convert.ToInt32(requete[iteration]), ram, diskDur);
-                        switch (choixAlgorithme.SelectedIndex)
-                        {
-                            case 0:
-                                ajoutFileLru();
-                                break;
-                            case 3:
-                                affichMatriceAging();
-                                break;
-                        }
-                        deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
-                        iteration++;
-                    }
 
 
-                }
-                precedent.IsEnabled = true;
-                if (iteration == suiteReferences.Text.Split(' ').Length) lancer.IsEnabled = false;
-            }
-        }
+
+        //                }
+        //                else
+        //                {
+
+        //                }
+        //                precedent.IsEnabled = true;
+        //                if (iteration == suiteReferences.Text.Split(' ').Length) lancer.IsEnabled = false;
+        //            }
+        //        }
+        //    }
+        //}
+
+
 
         private void majTablePage()
         {
@@ -205,8 +245,8 @@ namespace SimulationInterface
             int i = 0;
             foreach (EntreeTablePage e in tablePages)
             {
-                currentRow.Background = System.Windows.Media.Brushes.White;
-                currentRow.Foreground = System.Windows.Media.Brushes.Black;
+                currentRow.Background = Brushes.White;
+                currentRow.Foreground = Brushes.Black;
                 oTable.RowGroups[0].Rows.Add(new TableRow());
                 currentRow = oTable.RowGroups[0].Rows[i + 1];
                 currentRow.Cells[0] = new TableCell(new Paragraph(new Run(Convert.ToString(i))));
@@ -462,6 +502,59 @@ namespace SimulationInterface
 
         }
 
+
+        private void dessin(int r)
+        {
+            int pVictime=0;
+            switch (etape)
+            {
+                case 0:
+                    if (tablePages[r].getDisponible() == false)
+                    {
+                        champTPages.Text = "page non disponible dans la memoire centra (bit de disponibilité a 0)donc defaut de page";
+                        etape = 1;
+                    }
+                    break;
+                case 1:
+                    if (ram.getNombrepagesLibres() == 0)
+                    {
+
+                    }
+                    else etape = 2;
+                    break;
+                case 2:
+                    champRam.Text = "il existe des cases libres dans la ram,choix d'une case libre";
+                    break;
+
+
+
+            }
+            if (tablePages[r].getDisponible() == false && ram.getNombrepagesLibres() == 0)
+            {
+                switch (choixAlgorithme.SelectedIndex)
+                {
+                    case 0:
+                        pVictime = systemExploitation.fileLru.Peek();
+                        break;
+                    case 1:
+                        pVictime = systemExploitation.fifo.Peek();
+                        break;
+                    case 2:
+                        pVictime = systemExploitation.lfu.Find(l => l[1] == systemExploitation.lfu.Min(f => f[1]))[0];
+                        break;
+                    case 3:
+                        affichMatriceAging();
+                        pVictime = systemExploitation.aging.FindIndex(s => s == systemExploitation.aging.Min());
+                        break;
+
+                }
+                champRam.Text = "Swap out de la page" + pVictime.ToString();
+
+            }
+
+            if (tablePages[pVictime].getDirty() == true) champRam.Text += "\n reecriture de la page dans la memoire secondure";
+        }
+
         private void begin(object sender, RoutedEventArgs e)
         {
             champAdressePhysique.Text = "";
@@ -485,49 +578,39 @@ namespace SimulationInterface
                 {
                     String r = requete[iteration];
                     demande.Text = "Demande de l'adresse virtuelle: " + r;
-                    ColorAnimation test = new ColorAnimation()
-                    { To = Colors.White, Duration = new Duration(TimeSpan.FromMilliseconds(300)), AutoReverse = true };
+
                     try
                     {
-                        if (tablePages[Convert.ToInt32(r)].getDisponible() == false) //defaut de page
-                        {
-                            champTPages.Text = "page non disponible dans la memoire centrale (defaut de page)";
-                        }
-                        int pVictime = 0;
-                        if (tablePages[Convert.ToInt32(r)].getDisponible() == false && ram.getNombrepagesLibres() == 0)
-                        {
-                            switch (choixAlgorithme.SelectedIndex)
-                            {
-                                case 0:
-                                    pVictime = systemExploitation.fileLru.Peek();
-                                    break;
-                                case 1:
-                                    pVictime = systemExploitation.fifo.Peek();
-                                    break;
-                                case 2:
-                                    pVictime = systemExploitation.lfu.Find(l => l[1] == systemExploitation.lfu.Min(f => f[1]))[0];
-                                    break;
-                                case 3:
-                                    affichMatriceAging();
-                                    pVictime = systemExploitation.aging.FindIndex(s => s == systemExploitation.aging.Min());
-                                    break;
 
-                            }
-                            champRam.Text = "Swap out de la page" + pVictime.ToString();
+                        int pVictime = 0;
+
+
+
+                        switch (choixAlgorithme.SelectedIndex)
+                        {
+                            case 3:
+                                affichMatriceAging();
+                                break;
+
+                        }
+
+                        int sDefaut = systemExploitation.getDefautDePage();
+                        int sNbpage = ram.getNombrepagesLibres();
+                        SolidColorBrush myBrush = new SolidColorBrush();
+                        myBrush.Color = Colors.White;
+                        ColorAnimation ba = new ColorAnimation()
+                        { Duration = TimeSpan.FromMilliseconds(300)  };
+                        if (tablePages[Convert.ToInt32(r)].getDisponible()==true)
+                        {
+
+                            ba.To = Colors.Green;
                         }
                         else
                         {
-                            switch (choixAlgorithme.SelectedIndex)
-                            {
-                                case 3:
-                                    affichMatriceAging();
-                                    break;
-
-                            }
+                            ba.To = Colors.Red;
                         }
-                        if (tablePages[pVictime].getDirty() == true) champRam.Text += "\n reecriture de la page dans la memoire secondaire";
-                        int sDefaut = systemExploitation.getDefautDePage();
-                        int sNbpage = ram.getNombrepagesLibres();
+                        myBrush.BeginAnimation(SolidColorBrush.ColorProperty, ba);
+                        oTable.RowGroups[0].Rows[Convert.ToInt32(r)].Background = myBrush;
                         systemExploitation.gestionRequete(choixAlgorithme.SelectedIndex, tablePages, Convert.ToInt32(r), ram, diskDur);
                         switch (choixAlgorithme.SelectedIndex)
                         {
@@ -563,36 +646,28 @@ namespace SimulationInterface
                         }
                         champTPages.Text = "Mise a jour de la table de pages ";
                         afficherRam(ram);
-
+                        champAdressePhysique.Text = "L'adresse physique de la page " + r + " est: " + tablePages[Convert.ToInt32(r)].getPageCorrespandante().ToString();
+                        deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
+                        majTablePage();
+                        iteration++;
                     }
-
                     catch (FormatException)
                     {
+                        msgErreur.Text = "erreur dans la suite entrée.";
 
-                        Rectangle rectangle = new Rectangle()
-                        {
-                            Fill = Brushes.Gray,
-                            Opacity = 0.2,
-                            Height = gri.Height,
-                            Width = gri.Width
-                        };
-                        gri.Children.Add(rectangle);
-                        Canvas.SetLeft(rectangle, 0);
-                        Canvas.SetTop(rectangle, 0);
                     }
-                    champAdressePhysique.Text = "L'adresse physique de la page " + r + " est: " + tablePages[Convert.ToInt32(r)].getPageCorrespandante().ToString();
-                    deroulement.Text = "Nombre de defauts de page: " + systemExploitation.getDefautDePage().ToString();
-                    majTablePage();
-                    iteration++;
-                }
-                precedent.IsEnabled = true;
-                if (iteration == suiteReferences.Text.Split(' ').Length)
-                {
-                    lancer.IsEnabled = false;
-                    suivant.IsEnabled = false;
+
+                    precedent.IsEnabled = true;
+                    if (iteration == suiteReferences.Text.Split(' ').Length)
+                    {
+                        lancer.IsEnabled = false;
+                        suivant.IsEnabled = false;
+                    }
                 }
             }
+
         }
+
 
 
         private void EnterClicked(object sender, KeyEventArgs e)
