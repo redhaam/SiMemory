@@ -16,56 +16,59 @@
         mc:Ignorable="d"
         Title="Memoire Virtuelle" Height="800" Width="1541" >
     <Grid  HorizontalAlignment="Left" Name="gri" Height="800" VerticalAlignment="Top" Background="#FFF1EFEF" Width="1541" Margin="0,0,-0.2,0" RenderTransformOrigin="0.46,0.497">
-        <Rectangle RadiusY="15" Fill="#FFE8E7E7" HorizontalAlignment="Left" Height="179" materialDesign:ShadowAssist.ShadowDepth="Depth5" Margin="1081,530,0,0" VerticalAlignment="Top" Width="333">
+        <Rectangle RadiusY="15" Fill="#FFE8E7E7" HorizontalAlignment="Left" Height="179" materialDesign:ShadowAssist.ShadowDepth="Depth5" Margin="1112,530,0,0" VerticalAlignment="Top" Width="306">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFC3C3C3"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Canvas x:Name="aux" Margin="1099,559,141,102" />
-        <Rectangle Fill="#FFF4F4F5"  materialDesign:ShadowAssist.ShadowDepth="Depth5"  Margin="109,106,1099,473">
+        <Canvas x:Name="aux" Margin="1161,554,172,169" />
+        <Rectangle Fill="#FFF4F4F5"  materialDesign:ShadowAssist.ShadowDepth="Depth5"  Margin="109,106,1099,436">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFC3C3C3"/>
             </Rectangle.Effect>
         </Rectangle>
         <ComboBox x:Name="choixAlgorithme" Height="29" SelectionChanged="choixAlgorithme_SelectionChanged"  IsEditable="True" IsReadOnly="True"
-  Text="algorithme de remplacement" Margin="161,233,1167,0" VerticalAlignment="Top" >
+  Text="algorithme de remplacement" Margin="141,230,1141,0" VerticalAlignment="Top" >
 
             <ComboBoxItem Content="LRU " />
             <ComboBoxItem Content="FIFO"/>
             <ComboBoxItem Content="LFU"/>
             <ComboBoxItem Content="Aging"/>
         </ComboBox>
-        <TextBox x:Name="suiteReferences" PreviewKeyDown="EnterClicked" TextWrapping="Wrap" Text="" Margin="142,184,1141,584" />
-        <Button x:Name="lancer" Content="lancer" Click="begin" Margin="228,308,1225,463" RenderTransformOrigin="-1.345,4.284" Height="Auto" />
+        <TextBox x:Name="suiteReferences" PreviewKeyDown="EnterClicked" TextWrapping="Wrap" Text="" Margin="143,269,1140,499" />
+        <Button x:Name="lancer" Content="lancer" Click="begin" Margin="189,338,1183,418" RenderTransformOrigin="-1.345,4.284" Height="Auto" />
         <Button x:Name="stop"  Content="Stop" HorizontalAlignment="Left" IsEnabled="False" Height="31" Margin="836,667,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click" RenderTransformOrigin="1.332,0.606"/>
-        <Canvas x:Name="canvas1" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="250" Margin="719,18,0,0"/>
-        <ScrollViewer x:Name="tPages" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"  VerticalScrollBarVisibility="Disabled"   FontSize="16" Margin="1004,106,0,409" HorizontalScrollBarVisibility="Disabled"   />
+
+        <ScrollViewer x:Name="tPages" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"  VerticalScrollBarVisibility="Disabled"   FontSize="16" Margin="1116,106,15,409" HorizontalScrollBarVisibility="Disabled"   />
         <Rectangle  Fill="#FFF4F4F5"  materialDesign:ShadowAssist.ShadowDepth="Depth5" HorizontalAlignment="Left" Height="234" Margin="109,464,0,0" VerticalAlignment="Top" Width="333">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFC3C3C3"/>
             </Rectangle.Effect>
         </Rectangle>
         <TextBlock x:Name="deroulement" HorizontalAlignment="Left" Margin="141,629,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="259" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="252" FontSize="14" Margin="142,126,0,0"><Run FontSize="16" Text="Entrez une suite d'adresse virtuelles "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="358" FontSize="14" Margin="141,110,0,0"><Run FontSize="16" Text="Choisissez un algorthme de"/><LineBreak/><Run FontSize="16" Text="remplacement e"/><Run FontSize="16" Text="ntrez une suite"/><LineBreak/><Run FontSize="16" Text="d'adresse virtuelles "/></TextBlock>
         <TextBlock x:Name="champRam" HorizontalAlignment="Left" Height="44" Margin="675,592,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" RenderTransformOrigin="0.822,-0.509" FontSize="16"/>
         <TextBlock x:Name="champAdressePhysique" HorizontalAlignment="Left" Height="45" Margin="142,566,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="282" FontSize="16"/>
         <TextBlock x:Name="champAux" HorizontalAlignment="Left" Height="36" Margin="1130,518,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="110"/>
-        <TextBlock x:Name="champTPages" Height="52" Canvas.Left="28" TextWrapping="Wrap" Text="" Canvas.Top="90" Margin="1034,421,196,336" FontSize="16"/>
+        <TextBlock x:Name="champTPages" Height="52" Canvas.Left="28" TextWrapping="Wrap" Text="" Canvas.Top="90" Margin="1152,421,149,327" FontSize="16"/>
         <Button x:Name="precedent" Content="Precedent" HorizontalAlignment="Left" IsEnabled="False" Margin="719,666,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click_1" Height="31"/>
         <Button x:Name="suivant" Content="Suivant" HorizontalAlignment="Left" IsEnabled="False" Margin="599,667,0,0" VerticalAlignment="Top" Width="96" Click="begin" Height="31"/>
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="109,65,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="333"/>
         <TextBlock HorizontalAlignment="Left" Margin="161,77,0,0" TextWrapping="Wrap" Text="choix d'algorithme de remplacement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
-        <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="1081,490,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="333"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1130,502,0,0" TextWrapping="Wrap" Text="choix d'algorithme de remplacement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="1112,490,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="306"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1173,502,0,0" TextWrapping="Wrap" Text="choix d'algorithme de remplacement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="109,421,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="333"/>
         <TextBlock HorizontalAlignment="Left" Margin="235,433,0,0" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
         <TextBlock x:Name="demande" HorizontalAlignment="Left" Height="45" Margin="141,502,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="258" FontSize="16"/>
-        <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="991,65,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="455"/>
+        <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="1112,65,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="320"/>
         <TextBlock HorizontalAlignment="Left" Margin="1178,77,0,0" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Foreground="#DDFFFFFF" RenderTransformOrigin="0.886,0.542"/>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="141,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"><Run Text="(une suite de nombres entre 0 et 9) "/><LineBreak/><Run Text="separés par des espaces"/></TextBlock>
-        <TextBlock x:Name="msgErreur" HorizontalAlignment="Left" Height="27" Margin="142,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Foreground="#DDD62222"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" FontSize="10" Margin="1015,405,0,0" TextWrapping="Wrap" Text="Table de page" VerticalAlignment="Top" Width="156"/>
-        <Canvas x:Name="memVirtuelle"  HorizontalAlignment="Left" Height="500" Margin="508,18,0,0" VerticalAlignment="Top" Width="148"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="141,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"><Run Text="(une suite de nombres entre 0 et 9) "/><LineBreak/><Run Text="separés par des espaces"/></TextBlock>
+        <TextBlock x:Name="msgErreur" HorizontalAlignment="Left" Height="27" Margin="142,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Foreground="#DDD62222"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" FontSize="10" Margin="1152,370,0,0" TextWrapping="Wrap" Text="Table de page" VerticalAlignment="Top" Width="156"/>
+        <Canvas x:Name="memVirtuelle"  HorizontalAlignment="Left" Height="500" Margin="600,86,0,0" VerticalAlignment="Top" Width="150"/>
+        <Canvas x:Name="canvas1" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="150" Margin="860,211,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="611,53,0,0" TextWrapping="Wrap" Text="Memoire virtuelle" VerticalAlignment="Top" Width="128" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="34" Margin="834,166,0,0" TextWrapping="Wrap" Text="Memoire physique (RAM)" VerticalAlignment="Top" Width="202" FontSize="16" />
 
     </Grid>
 </Page>
