@@ -81,11 +81,10 @@ namespace SimulationInterface
                 np.Text                    = k.ToString();
                 shape.MouseLeftButtonDown += delegate
                 {
-                    if(!suiteReferences.IsReadOnly)
-                    {
+
                         if (suiteReferences.Text == "") suiteReferences.Text = np.Text;
                         else suiteReferences.Text += " " + np.Text;
-                    }
+
 
                 };
 ;
@@ -123,7 +122,7 @@ public delegate void ajoutNombre(UIElement element);
             TableRow currentRow = oTable.RowGroups[0].Rows[0];
             currentRow.Background = Brushes.Navy;
             currentRow.Foreground = Brushes.White;
-            String[] titres = new String[] { "Adresse \nvirtuelle", "Adresse \nvirtuelle", "Adresse \nphysique" , "Bit de \nvalidité", "bit de \nmodification" };
+            String[] titres = new String[] { "Adresse \nvirtuelle", "Adresse \nphysique" , "Bit de \nvalidité", "bit de \nmodification" };
             for(int k=0;k<numberOfColumns;k++)
             currentRow.Cells.Add( new TableCell(new Paragraph(new Run(titres[k]))));
 
@@ -318,7 +317,7 @@ public delegate void ajoutNombre(UIElement element);
             table.Columns[0].Width = new GridLength(30);
 
             table.Columns.Add(new TableColumn());
-            table.Columns[1].Width = new GridLength(400);
+            table.Columns[1].Width = new GridLength(200);
             
             table.RowGroups.Add(new TableRowGroup());
             table.RowGroups[0].Rows.Add(new TableRow());
@@ -335,15 +334,13 @@ public delegate void ajoutNombre(UIElement element);
                 table.RowGroups[0].Rows.Add(new TableRow());
                 currentRow = table.RowGroups[0].Rows[i + 1];
                 currentRow.Cells.Add(new TableCell(new Paragraph(new Run(Convert.ToString(i)))));
-                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(String.Join("", Enumerable.Repeat<String>("0", 31 - (Convert.ToString(e, 2).Length)).ToList<String>()) + Convert.ToString(e, 2)))));
+                currentRow.Cells.Add(new TableCell(new Paragraph(new Run(String.Join("", Enumerable.Repeat<String>("0", 16 - (Convert.ToString(e, 2).Length)).ToList<String>()) + Convert.ToString(e, 2)))));
                 i++;
             }
             currentRow.Background = Brushes.White;
             currentRow.Foreground = Brushes.Black;
             docr.Document = ag;
-            docr.Width = 400;
             docr.VerticalScrollBarVisibility = 0;
-
             aux.Children.Clear();
             aux.Children.Add(docr);
             Canvas.SetLeft(docr, 0);
@@ -732,6 +729,7 @@ public delegate void ajoutNombre(UIElement element);
             lancer.IsEnabled = true;
             sauvSuite = suiteReferences.Text;
             suivant.IsEnabled = true;
+            iteration = 0;
             systemExploitation.creationTablePages(tablePages, 2*nbPages, ram, diskDur);
             aux.Children.Clear();
             canvas1.Children.Clear();
