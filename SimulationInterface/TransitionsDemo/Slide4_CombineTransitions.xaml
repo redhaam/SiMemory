@@ -13,8 +13,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap">You can combine some transition effects too.  Did you see how this page slid in from the bottom and left?</TextBlock>
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" TextWrapping="Wrap" Grid.Row="1">Next we will look at some granular transitions on individual elements.</TextBlock>
+            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap"><Run Text="Ainsi que l'évolution des occupations et libérations de la mémoire centrale en fonction des requêtes des processus."></Run></TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,2">
                 <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
                     Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"

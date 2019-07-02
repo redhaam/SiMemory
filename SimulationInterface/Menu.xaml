@@ -67,7 +67,7 @@
                 </materialDesign:TransitionerSlide.OpeningEffects>
                 <local:Slide4_CombineTransitions xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
             </materialDesign:TransitionerSlide>
-            <local:Slide6_Origins xmlns:local="clr-namespace:MaterialDesignDemo.TransitionsDemo" />
+            
 
         </materialDesign:Transitioner>
 
@@ -88,23 +88,22 @@
       Grid.Row="1"
       Margin="8 24 8 0">
                     <TextBlock
-        FontWeight="Bold" Height="54">
+        FontWeight="Bold" Height="28">
       Partitions Variables
                     </TextBlock>
                     <TextBlock
         TextWrapping="Wrap"
-        VerticalAlignment="Center" Height="74">
-      A great way to keep fit and forget about the constant grind of IT.
-                    </TextBlock>
+        VerticalAlignment="Center" Height="78"><Run Text="Dans cette stratégie la mémoire est partitionnée dynamiquement selon la demande. Lorsqu'un processus se termine sa partition est récupérée pour être réutilisée par d'autres processus.
+"/></TextBlock>
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="41,167.2,199,71.6" Grid.Row="1" Click="Button_Click_2" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="26,167,186,72" Grid.Row="1" Click="Button_Click_2" Height="Auto">
                     Simulation
                 </Button>
                 <Button
     Style="{StaticResource MaterialDesignRaisedButton}"
-    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="194,167.2,46,71.6" Grid.Row="1" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="181,167,59,72" Grid.Row="1" Height="Auto">
                     Exemple
                 </Button>
                 <Image Source="y.png" Stretch="Fill"/>
@@ -151,14 +150,22 @@
       Grid.Row="1"
       Margin="8 24 8 0">
                     <TextBlock
-        FontWeight="Bold" Height="63"><Run Text="Partitions fixes"/></TextBlock>
+        FontWeight="Bold" Height="32"><Run Text="Partitions fixes"/></TextBlock>
                     <TextBlock
         TextWrapping="Wrap"
-        VerticalAlignment="Center" Height="62"><Run Text="A great way to keep fit and forget about the constant grind of IT."/></TextBlock>
+        VerticalAlignment="Center" Height="78"><Run Text="Dans cette stratégie la mémoire est divisée en n partitions de tailles fixes (si possible inégales). Ce partitionnement se fait au démarrage du système. Le système d'exploitation maintient une table de description des partitions."/></TextBlock>
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="34,176,206,74" Grid.Row="1" Click="Button_Click" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="25,175,194,76" Grid.Row="1" Click="Button_Click" Height="Auto" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.213"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
                     Simulation
                 </Button>
                 <Button
@@ -168,7 +175,7 @@
                 </Button>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card Margin="1016,10,185,0" Height="450" Grid.Row="1">
+        <materialDesign:Card Margin="1016,10,185,0" Height="453" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition
@@ -180,8 +187,7 @@
                 </Grid.RowDefinitions>
                 <Image
       Image.Source="Image\z.jpg"
-      Height="140"
-      Stretch="UniformToFill" />
+      Stretch="UniformToFill" Margin="0,0,0,290" Grid.RowSpan="2" />
                 <Button
       Grid.Row="0"
       Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
@@ -195,25 +201,21 @@
       Grid.Row="1"
       Margin="8 24 8 0">
                     <TextBlock
-        FontWeight="Bold" Height="48">
-      Pagination
-                    </TextBlock>
+        FontWeight="Bold" Height="46" Margin="0,0,10,0"><Run Text="Pagination"/></TextBlock>
                     <TextBlock
         TextWrapping="Wrap"
-        VerticalAlignment="Center" Height="78">
-      A great way to keep fit and forget about the constant grind of IT.
-                    </TextBlock>
+        VerticalAlignment="Center" Height="95" Margin="0,0,10,0"><Run Text=" La mémoire réelle est également découpée en cases ayant la taille d'une page de sorte que chaque page peut être implantée dans n'importe quelle case de la mémoire réelle."/><Run Text=" &quot;"/></TextBlock>
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="60,212,180,65.6" Grid.Row="1" Click="Button_Click_3">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="18,106,157,19" Grid.Row="1" Click="Button_Click_3">
                     Simulation
                 </Button>
                 <Button
     Style="{StaticResource MaterialDesignRaisedButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="202,212,38,65.6" Grid.Row="1">
+    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="159,106,16,19" Grid.Row="1">
                     Exemple
                 </Button>
             </Grid>
