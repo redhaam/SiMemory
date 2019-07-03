@@ -21,7 +21,7 @@
 
     <Grid>
         <Canvas Margin="120,95,155,136">
-            <Image Image.Source="Image/base-board-chips-825263.jpg" Height="1175" Canvas.Left="-255" Width="1625" Canvas.Top="-284"/>
+            <Image Image.Source="Image/2.jpg" Height="1175" Canvas.Left="-255" Width="1625" Canvas.Top="-284"/>
 
             <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth5" 

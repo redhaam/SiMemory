@@ -13,7 +13,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap"><Run Text="Ainsi que l'évolution des occupations et libérations de la mémoire centrale en fonction des requêtes des processus."></Run></TextBlock>
+            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap"><Run Text="Il vous permettra de visualiser la cohabitation des processus en Mémoire Centrale."></Run></TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,2">
                 <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
                     Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"

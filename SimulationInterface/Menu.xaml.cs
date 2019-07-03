@@ -33,8 +33,8 @@ namespace SimulationInterface
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService ns = NavigationService.GetNavigationService(this);
-            ns.Navigate(new Uri("DocumentationFixe.xaml", UriKind.Relative));
+            DocPartFix docPartFix = new DocPartFix();
+            docPartFix.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -53,6 +53,20 @@ namespace SimulationInterface
             NavigationService ns = NavigationService.GetNavigationService(this);
             ns.Navigate(new Uri("MemoireVirtuelle.xaml", UriKind.Relative));
 
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            DocPartVar docPartVar = new DocPartVar();
+            docPartVar.Show();
+        
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            DocPagination doc = new DocPagination();
+            doc.Show();
         }
     }
 }
