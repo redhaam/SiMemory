@@ -13,7 +13,7 @@
                 <Rectangle Fill="#0097a7" Height="435" Canvas.Left="70" Width="220" StrokeThickness="5" Stroke="#FF525858"/>
             </Canvas>
         </Grid>
-        <TextBox x:Name="text" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Margin="719,660,0,0" RenderTransformOrigin="0.492,0.378" TextChanged="TextBox_TextChanged" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" Text="0" Panel.ZIndex="1" TextAlignment="Center" Foreground="#FF3E3E42" FontWeight="Bold">
+        <TextBox x:Name="text" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Margin="740,659,0,0" RenderTransformOrigin="0.492,0.378" TextChanged="TextBox_TextChanged" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" Text="0" Panel.ZIndex="1" TextAlignment="Center" Foreground="#FF3E3E42" FontWeight="Bold">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -66,7 +66,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <Ellipse x:Name="timeE" HorizontalAlignment="Left" Height="50" Margin="666,710,0,0" StrokeThickness="7" VerticalAlignment="Top" Width="50" Stroke="#00acc1" Fill="#80deea"/>
+            <Ellipse x:Name="timeE" HorizontalAlignment="Left" Height="50" Margin="687,710,0,0" StrokeThickness="7" VerticalAlignment="Top" Width="50" Stroke="#00acc1" Fill="#80deea"/>
             <Canvas x:Name="stat_pro" Margin="20,490,1065.2,104.8">
                 <Rectangle Height="275" StrokeThickness="0" Width="295" Stroke="#FFE8E7E7" Canvas.Top="25" Panel.ZIndex="1" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7">
                     <Rectangle.Effect>
@@ -129,19 +129,19 @@
                     <DropShadowEffect BlurRadius="5"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="35" Margin="1036,485,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="325" RadiusX="5" RadiusY="5">
+            <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="35" Margin="1060,473,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="325" RadiusX="5" RadiusY="5">
                 <Rectangle.Effect>
                     <DropShadowEffect/>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock HorizontalAlignment="Left" Margin="1055,485,0,0" TextWrapping="Wrap" Text="Déroulement" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold"/>
-            <TextBlock x:Name="derlo" HorizontalAlignment="Left" Margin="1060,537,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="185" Width="270" FontWeight="Bold" RenderTransformOrigin="1.107,1.227" Panel.ZIndex="1" Foreground="Black" FontSize="10"><Run Text="Dérouleme"/><Run Text="nt de la simulation"/></TextBlock>
-            <Rectangle HorizontalAlignment="Left" Height="245" Margin="1036,531,0,0" VerticalAlignment="Top" Width="305" Fill="#FFE8E7E7" StrokeThickness="0">
+            <TextBlock HorizontalAlignment="Left" Margin="1110,480,0,0" TextWrapping="Wrap" Text="Déroulement" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold"/>
+            <TextBlock x:Name="derlo" HorizontalAlignment="Left" Margin="1091,537,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="185" Width="270" FontWeight="Bold" RenderTransformOrigin="1.107,1.227" Panel.ZIndex="1" Foreground="Black" FontSize="10"><Run Text="Dérouleme"/><Run Text="nt de la simulation"/></TextBlock>
+            <Rectangle HorizontalAlignment="Left" Height="245" Margin="1075,520,0,0" VerticalAlignment="Top" Width="305" Fill="#FFE8E7E7" StrokeThickness="0">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="#FFC5C4C4"/>
                 </Rectangle.Effect>
             </Rectangle>
-            <Ellipse Fill="#00acc1" HorizontalAlignment="Left" Height="42" Margin="1035,738,0,0" Stroke="#FF525D6E" StrokeThickness="3" VerticalAlignment="Top" Width="306" RenderTransformOrigin="0.5,0.5">
+            <Ellipse Fill="#00acc1" HorizontalAlignment="Left" Height="42" Margin="1070,740,0,0" Stroke="#FF525D6E" StrokeThickness="3" VerticalAlignment="Top" Width="306" RenderTransformOrigin="0.5,0.5">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -151,9 +151,9 @@
                     </TransformGroup>
                 </Ellipse.RenderTransform>
             </Ellipse>
-            <Button Content="&gt;" HorizontalAlignment="Left" Margin="1321,743,0,0" VerticalAlignment="Top" Width="45" Background="#00acc1" BorderBrush="{x:Null}" Click="Button_Click_3" FontWeight="Bold" FontSize="20" Foreground="White" Height="31"/>
-            <TextBlock x:Name="num_text" HorizontalAlignment="Left" Margin="1170,743,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Foreground="White" FontSize="20" TextAlignment="Center" Width="30" Height="27" FontWeight="Bold"/>
-            <Button Content="&lt;" HorizontalAlignment="Left" Margin="1025,744,0,0" VerticalAlignment="Top" Width="45" FontWeight="Bold" FontSize="20" Background="#00acc1" Click="Button_Click_4" BorderBrush="{x:Null}" Foreground="White" Height="32"/>
+            <Button Content="&gt;" HorizontalAlignment="Left" Margin="1355,746,0,0" VerticalAlignment="Top" Width="45" Background="#00acc1" BorderBrush="{x:Null}" Click="Button_Click_3" FontWeight="Bold" FontSize="20" Foreground="White" Height="31"/>
+            <TextBlock x:Name="num_text" HorizontalAlignment="Left" Margin="1203,745,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Foreground="White" FontSize="20" TextAlignment="Center" Width="30" Height="27" FontWeight="Bold"/>
+            <Button Content="&lt;" HorizontalAlignment="Left" Margin="1055,746,0,0" VerticalAlignment="Top" Width="45" FontWeight="Bold" FontSize="20" Background="#00acc1" Click="Button_Click_4" BorderBrush="{x:Null}" Foreground="White" Height="32"/>
             <TextBlock x:Name="titre" HorizontalAlignment="Left" Margin="606,312,0,0" TextWrapping="Wrap" Text="SIMemory" VerticalAlignment="Top" Width="200" Foreground="#006978" FontSize="36" FontWeight="Bold"/>
             <Canvas x:Name="param1" HorizontalAlignment="Left" Height="670" Margin="332,107,0,0" VerticalAlignment="Top" Width="145">
                 <ListBox x:Name="algo" Height="156" Canvas.Top="417" Width="150" BorderBrush="#FF070707">
@@ -212,7 +212,7 @@
             <Button x:Name="en_cours" Content="en cours" HorizontalAlignment="Left" Margin="100,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#FFB9B7B7" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" FontSize="8" Click="En_cours_Click"/>
             <Button x:Name="en_attente" Content="en attente" HorizontalAlignment="Left" Margin="175,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#FFB9B7B7" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" FontSize="7" Click="En_attente_Click"/>
             <Button x:Name="finis" Content="finis" HorizontalAlignment="Left" Margin="245,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#FFB9B7B7" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" FontSize="8" Click="Finis_Click"/>
-            <Button x:Name="synchro" Content="" HorizontalAlignment="Left" Margin="1140,742,0,0" VerticalAlignment="Top" Width="164" Background="{x:Null}" BorderBrush="{x:Null}" Click="Synchro_Click"/>
+            <Button x:Name="synchro" Content="" HorizontalAlignment="Left" Margin="1160,745,0,0" VerticalAlignment="Top" Width="164" Background="{x:Null}" BorderBrush="{x:Null}" Click="Synchro_Click"/>
             <TextBlock x:Name="Algorithme" HorizontalAlignment="Left" Margin="648,74,0,0" TextWrapping="Wrap" Text="First Fit" FontWeight="Bold" FontStyle="Italic" FontSize="20" VerticalAlignment="Top" Height="26" Width="103"/>
         </Grid>
     </Grid>
