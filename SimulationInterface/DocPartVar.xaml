@@ -1,0 +1,55 @@
+﻿<Window x:Class="SimulationInterface.DocPartVar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationInterface"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Documentation" Height="750" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <materialDesign:ColorZone
+            Mode="PrimaryDark"
+            Padding="16"
+            CornerRadius="3"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            Margin="0,0,0,0" Height="50">
+
+
+        </materialDesign:ColorZone>
+
+        <ScrollViewer Margin="6,47,-5,0">
+            <StackPanel Height="2096">
+                <TextBlock   Text="Partitions contiguës dynamiques"    FontSize="40" Width="585"/>
+                <TextBlock   Text="Dans cette stratégie la mémoire est partitionnée dynamiquement &#x0a;selon la demande. Lorsqu'un processus se termine sa partition est &#x0a;récupérée pour être réutilisée (complètement ou partiellement) &#x0a;par d'autres processus."    FontSize="25" Width="724" Height="130"/>
+                <TextBlock   Text="Stratégies d'allocation"    FontSize="30" Height="36" Width="744"/>
+                <TextBlock   Text="Le lancement des processus dans les partitions se fait selon &#x0a;différentes stratégies. Pour cela le gestionnaire de la mémoire &#x0a;doit garder trace des partitions occupées et/ou des partitions &#x0a;libres. On distingue les stratégies de placement suivantes :"    FontSize="25" Width="720" Height="154"/>
+                <TextBlock   Text="1.Stratégie du premier qui convient (First Fit): "    FontSize="29" Width="756" Height="44"/>
+                <TextBlock   Text=" La liste des partitions libres est triée par ordre des adresses &#x0a;croissantes. La recherche commence par la partition libre de plus &#x0a;basse adresse et continue jusqu'à la rencontre de la première &#x0a;partition dont la taille est au moins égale à celle du processus en &#x0a;attente."    FontSize="25" Height="155" Width="732"/>
+                <TextBlock   Text="2. Stratégie du meilleur qui convient (Best Fit):"    FontSize="29" Width="752"/>
+
+                <TextBlock   Text="On alloue la plus petite partition dont la taille est au moins égale &#x0a;à celle du processus en attente. La table des partitions libres est &#x0a;de préférence triée par tailles croissantes."    FontSize="25" Width="722" Height="96"/>
+                <TextBlock   Text="3. Stratégie du pire qui convient (Worst Fit): "    FontSize="29" Width="752"/>
+                <TextBlock   Text="On alloue au processus la partition de plus grande taille."    FontSize="25" Width="732" Height="43"/>
+                <TextBlock   Text="4.Partitions Siamoises (Buddy system): "    FontSize="29" Width="756"/>
+                <TextBlock   Text="La mémoire est allouée en unités qui sont des puissances de 2. &#x0a;Initialement, il existe une seule unité comprenant toute la mémoire. &#x0a;Lorsque de la mémoire doit être attribuée à un processus, ce &#x0a;dernier reçoit une unité de mémoire dont la taille est la plus petite &#x0a;puissance de 2 supérieure à la taille du processus. S'il n'existe &#x0a;aucune unité de cette taille, la plus petite unité disponible supérieure &#x0a;au processus est divisée en deux unités de la moitié de la taille de &#x0a;l'original. La division se poursuit jusqu'à l'obtention de la taille &#x0a;appropriée. De même deux unités siamoises libres sont combinées &#x0a;pour obtenir une unité plus grande."    FontSize="25" Height="331" Width="760"/>
+                <TextBlock   Text="Exemple :"    FontSize="30" Width="740" Height="44"/>
+                <TextBlock   Text="Soit une MC dont la table des partitions libres est la suivante :"    FontSize="25" Width="740"/>
+                <Image Source="Image/tableau.png" Margin="100,0,0,100" Width="265" Height="126"/>
+                <TextBlock   Text="Soit les demandes suivantes P4(24K), P5(128K), P6(256K) . &#x0a;Evolution de la table des partitions libres:"   FontSize="25" Height="64" Width="736"/>
+                <Image Image.Source="Image/tableaux.png" Canvas.Left="614" Canvas.Top="198" Width="362" RenderTransformOrigin="0.657,0.288" Height="300"/>
+                <TextBlock   Text="Fragmentation externe : "    FontSize="35" Width="714"/>
+                <TextBlock   Text="Lorsque le processus est supprimé de la mémoire, il crée l'espace &#x0a;libre dans la mémoire provoquant la fragmentation externe."    FontSize="25" Width="720" Height="91"/>
+            </StackPanel>
+        </ScrollViewer>
+
+
+    </Grid>
+</Window>

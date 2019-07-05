@@ -65,6 +65,15 @@
     </ApplicationDefinition>
     <Compile Include="Case.cs" />
     <Compile Include="DiskDur.cs" />
+    <Compile Include="DocPagination.xaml.cs">
+      <DependentUpon>DocPagination.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocPartFix.xaml.cs">
+      <DependentUpon>DocPartFix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocPartVar.xaml.cs">
+      <DependentUpon>DocPartVar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EntreeTablePage.cs" />
     <Compile Include="Mmu.cs" />
     <Compile Include="Part.cs" />
@@ -123,6 +132,18 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="DocPagination.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocPartFix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocPartVar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InfoMcFix.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -294,6 +315,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\simemory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\traductionA.png" />
+    <Resource Include="Image\uneSeuleFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tableau.png" />
+    <Resource Include="Image\tableaux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\pagination.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

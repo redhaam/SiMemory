@@ -1,0 +1,70 @@
+﻿<Window x:Class="SimulationInterface.DocPagination"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationInterface"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Documentation" Height="750" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <materialDesign:ColorZone
+            Mode="PrimaryDark"
+            Padding="16"
+            CornerRadius="3"
+            materialDesign:ShadowAssist.ShadowDepth="Depth3"
+            Margin="0,0,0,0" Height="50">
+
+
+        </materialDesign:ColorZone>
+
+
+        <ScrollViewer Margin="0,47,1,0">
+            <StackPanel Height="2406">
+                <TextBlock   Text="Mémoire Virtuelle"    FontSize="40" Width="318"/>
+                <TextBlock   Text="La traduction dynamique d'adresse réalisée par l'emploi d'un &#x0a;registre de base impose que les programmes soient chargés en &#x0a;mémoire principale dans des cellules contiguës.&#x0a;Les techniques d'allocation associées conduisent à la fragmentation &#x0a;de la mémoire. Pour l'éviter, il faut pouvoir implanter un &#x0a;programme dans plusieurs zones non contiguës. &#x0a;Plusieurs techniques proposent d'allouer des espaces mémoire non-&#x0a;contiguës pour les processus. Parmi ceux :la pagination"    FontSize="25" Width="746" Height="258"/>
+                <TextBlock   Text="Pagination"    FontSize="35" Width="760" Height="45"/>
+                <TextBlock   Text="La solution apportée par les mécanismes de pagination consiste à &#x0a;découper l'espace adressable, ou espace virtuel, en zones de taille &#x0a;fixe appelée pages. La mémoire réelle est également découpée en &#x0a;cases (frame en anglais) ayant la taille d'une page de sorte que &#x0a;chaque page peut être implantée dans n'importe quelle case de la &#x0a;mémoire réelle."    FontSize="25" Height="188" Width="732"/>
+                <Image Image.Source="Image/pagination.png" Margin="0,0,0,0" Width="532" Height="358"/>
+                
+
+
+                <TextBlock   Text="Traduction d'adresse :"    FontSize="30" Width="761"/>
+                <TextBlock   Text="L'adresse réelle (f,d) d'un mot d'adresse virtuelle (p,d) est obtenue  &#x0a;en remplaçant le numéro de page p par le numéro de case f  &#x0a;trouvé dans la p-ième entrée."    FontSize="25" Width="730" Height="96"/>
+                <Image Source="Image/traductionA.png" Width="482" Height="319" />
+                <TextBlock   Text="Pagination à a demande"    FontSize="30" Height="40" />
+                <TextBlock   Text="Le programme gère une adresse logique paginée (p,d) &#x0a;
+SI p est valide
+ &#x0a;ALORS générer adresse physique
+ &#x0a;SINON /* Défaut de page */
+ &#x0a;Lire p de la mémoire secondaire /* swap in */
+ &#x0a;SI il y une case libre en mémoire centrale
+ &#x0a;ALORS
+ &#x0a;  allouer cette case à p 
+&#x0a;    mettre à jour la table de page
+ &#x0a;  générer l'adresse physique
+ &#x0a;SINON /* algorithme de remplacement */
+ &#x0a;  choisir une page présente en mémoire centrale
+ &#x0a;  l'écrire en mémoire secondaire /* swap out */
+ &#x0a;  mettre à jour le bit de validité
+ &#x0a;  affecter la case libérée à la nouvelle page
+ &#x0a;   et mettre à jour la table de page
+ &#x0a;  générer l'adresse physique
+ &#x0a;FSI
+ &#x0a;FSI "    FontSize="25" FontStyle="Italic" Height="580" Width="622"/>
+
+                <TextBlock   Text="Algorithmes de remplacement de page :"    FontSize="30" Width="750"/>
+                <TextBlock   Text="A la suite d'un défaut de page, le système d'exploitation doit &#x0a;ramener en mémoire la page manquante à partir de la mémoire &#x0a;secondaire (le disque). S'il n'y a pas de cases libres en mémoire, il &#x0a;doit retirer une page de la mémoire pour la remplacer par celle &#x0a;demandée. Si la page à retirer a été modifiée depuis son &#x0a;chargement en mémoire, il faut la réécrire sur le disque. &#x0a;Pour ce faire, il existe plusieurs algorithmes de remplacement de &#x0a;page : l'algorithme de remplacement aléatoire FIFO, l'algorithme &#x0a;de remplacement de page la moins récemment utilisée LRU, &#x0a;l'algorithme de remplacement de page la moins fréquemment &#x0a;utilisée LFU/NFU, l'algorithme de remplacement de page par &#x0a;vieillissement AGING, et bien d'autres."    FontSize="25" Width="720" Height="361"/>
+                
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
