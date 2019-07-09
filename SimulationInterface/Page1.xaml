@@ -197,9 +197,6 @@
 
     <Grid x:Name="Gri" HorizontalAlignment="Left" Height="871" VerticalAlignment="Top" Background="#FFF1EFEF" Width="1541" Margin="0,0,-6.6,-0.6" RenderTransformOrigin="0.46,0.497">
         <Grid Height="870" Margin="-19,-15,22,0" VerticalAlignment="Top" Opacity="0.975">
-            <Button x:Name="btn_sim" Content="Parametre" Click="btn_sim_Click" Margin="629,761,795,79" Height="Auto" Background="#00acc1" RenderTransformOrigin="0.5,0.5">
-
-            </Button>
             <Button x:Name="sim" Content="Simulation" Canvas.Top="41" Click="sim_Click" Margin="797,761,632,79" Height="Auto" Background="#00acc1" RenderTransformOrigin="0.661,2.267"/>
             <TextBox x:Name="nbp" Canvas.Left="141" TextWrapping="Wrap" Text="" Margin="228,75,1309.8,770" RenderTransformOrigin="0.5,0.5">
                 <TextBox.RenderTransform>
@@ -221,7 +218,7 @@
 
                 <Button  Canvas.Top="55" Width="98" Content="En-cours" Height="30" Click="Button_Click" Canvas.Left="203" Background="#aed581" HorizontalAlignment="Right"/>
                 <Button Opacity="1" Canvas.Top="55" Content="Blocké" Height="30" Canvas.Left="98" Click="Button_Click_1" Background="#aed581" Width="100" />
-                <Button Opacity="1" Canvas.Top="55" Content="fini" Height="30" Canvas.Left="306"  Click="Button_Click_3" Background="#aed581" Width="82"/>
+                <Button Opacity="1" Canvas.Top="55" Content="terminé" Height="30" Canvas.Left="306"  Click="Button_Click_3" Background="#aed581" Width="82"/>
                 <Button  Canvas.Top="55" Content="tout" Height="30" Click="Button_Click_2" Background="#aed581" VerticalAlignment="Top" Width="83" Canvas.Left="10" />
 
                 <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="35" StrokeThickness="3" VerticalAlignment="Top" Width="410" RadiusX="5" RadiusY="5" Canvas.Left="-6" Canvas.Top="-2">
@@ -229,7 +226,7 @@
                         <DropShadowEffect/>
                     </Rectangle.Effect>
                 </Rectangle>
-                <TextBlock Canvas.Left="129" TextWrapping="Wrap" Text="Liste des Processus" Canvas.Top="4" Width="138" Foreground="#DDFFFFFF" FontWeight="Bold" FontSize="14"/>
+                <TextBlock Canvas.Left="129" TextWrapping="Wrap" Text="Liste de Processus" Canvas.Top="4" Width="138" Foreground="#DDFFFFFF" FontWeight="Bold" FontSize="14"/>
                 <ScrollViewer CanContentScroll="True" Height="230" Width="388" Canvas.Top="90" >
                     <StackPanel x:Name="Sta">
 
@@ -270,8 +267,8 @@
             <TextBox x:Name="Delay" Canvas.Left="164" TextWrapping="Wrap" Canvas.Top="19" Margin="433,549,1009,288" PreviewTextInput="Delay_PreviewTextInput"  />
             <Rectangle HorizontalAlignment="Left" Height="51" Margin="664,89,0,0" StrokeThickness="3" VerticalAlignment="Top" Width="220" Fill="#fdd835" Stroke="#FF525858" RadiusX="5" RadiusY="5"/>
             <TextBlock HorizontalAlignment="Left" Margin="758,103,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Height="34" Width="51" FontSize="24" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="388,489,0,0" TextWrapping="Wrap" Text="Taille" VerticalAlignment="Top" Width="45" Height="16"/>
-            <TextBlock HorizontalAlignment="Left" Margin="388,561,0,0" TextWrapping="Wrap" Text="Temps" VerticalAlignment="Top" Width="65" Height="21"/>
+            <TextBlock HorizontalAlignment="Left" Margin="388,489,0,0" TextWrapping="Wrap" Text="Taille (Mo)" VerticalAlignment="Top" Width="45" Height="16"/>
+            <TextBlock HorizontalAlignment="Left" Margin="388,561,0,0" TextWrapping="Wrap" Text="Temps (sec)" VerticalAlignment="Top" Width="65" Height="21"/>
             <TextBlock x:Name="Error" HorizontalAlignment="Left" Margin="396,678,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="102" Width="178" FontWeight="Bold"/>
 
 
@@ -289,7 +286,7 @@
                     <DropShadowEffect/>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Height="20" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold" Canvas.Left="46" Canvas.Top="-6"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Déroulement" VerticalAlignment="Top" Height="20" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFFAF8F8" FontWeight="Bold" Canvas.Left="46" Canvas.Top="-6"/>
             <TextBlock x:Name="derlo"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="292" FontWeight="Bold" RenderTransformOrigin="1.107,1.227" Panel.ZIndex="1" Foreground="Black" FontSize="10" Canvas.Left="46" Canvas.Top="60"><Run Text="    "/><LineBreak/><Run Text="   "/><Run Text="Dérouleme"/><Run Text="nt de la simulation"/></TextBlock>
             <Rectangle Height="266"  Stroke="#FF7D7C7C" Width="360" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7" StrokeThickness="0" Canvas.Top="30" Canvas.Left="3">
                 <Rectangle.Effect>
@@ -327,7 +324,7 @@
                     <DropShadowEffect/>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Statistiques des processus" VerticalAlignment="Top" Width="172" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold" Canvas.Left="46" Canvas.Top="10"/>
+            <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Description de processus" VerticalAlignment="Top" Width="172" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold" Canvas.Left="46" Canvas.Top="10"/>
 
             <Rectangle Fill="#FF0A903D" HorizontalAlignment="Left" Height="101" StrokeThickness="5" VerticalAlignment="Top" Width="28" Canvas.Top="65" Canvas.Left="44" Panel.ZIndex="1"/>
             <Rectangle x:Name="cours" HorizontalAlignment="Left" Height="100" StrokeThickness="5" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5" Fill="White" Canvas.Top="63" Canvas.Left="44" Panel.ZIndex="1">
@@ -388,7 +385,7 @@
                     <DropShadowEffect/>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock Canvas.Left="72" TextWrapping="Wrap" Text="Statistique de la memoire" Canvas.Top="10" Width="201" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold"/>
+            <TextBlock Canvas.Left="72" TextWrapping="Wrap" Text="Description de la memoire" Canvas.Top="10" Width="201" Foreground="#DDFFFFFF" FontSize="14" FontWeight="Bold"/>
             <Rectangle Fill="#8bc34a" Height="16" Canvas.Left="90" StrokeThickness="3" Canvas.Top="277" Width="23" RenderTransformOrigin="-0.091,1.4"/>
             <Rectangle Fill="White" Height="16" Canvas.Left="90" StrokeThickness="3" Canvas.Top="252" Width="23" RenderTransformOrigin="-0.091,1.4"/>
         </Canvas>

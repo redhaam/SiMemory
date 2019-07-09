@@ -1,0 +1,100 @@
+﻿<Page x:Class="SimulationInterface.Apropos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SimulationInterface"
+      mc:Ignorable="d" 
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       Background="{DynamicResource MaterialDesignPaper}"
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Apropos" Height="800" Width="1541" >
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="606*"/>
+            <ColumnDefinition Width="935*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="LinkedinBox" Height="52" Width="74" Margin="108,586,0,0" RenderTransformOrigin="0.514,0.615" />
+
+        <Image Source="Image/collaboration.png" RenderTransformOrigin="0.657,0.288" Grid.Column="1" Margin="0,70,1,63"/>
+        <TextBlock Margin="202,596,82,38" FontSize="20"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
+               NavigateUri="http://www.msn.com">Contactez nous sur Linkedin</Hyperlink></TextBlock>
+
+        <materialDesign:Card
+    materialDesign:ShadowAssist.ShadowDepth="Depth3" 
+    Padding="32" Height="472" Margin="40,66,60,0">
+
+        </materialDesign:Card>
+        <materialDesign:ColorZone
+  Mode="PrimaryLight"
+  Padding="16" Grid.ColumnSpan="2" Margin="-2,94,7,-1" Height="37" Grid.Row="1">
+            <StackPanel
+    Orientation="Horizontal"/>
+        </materialDesign:ColorZone>
+
+        <materialDesign:Chip
+  Content="Amirouche M.Redha" Height="Auto" Margin="65,20,0,66" Width="202" Grid.Row="1">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+
+        <materialDesign:Chip
+  Content="Mecharbat L.Abdelkrim" Height="Auto" Margin="695,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+
+        <materialDesign:Chip
+  Content="Smail Sabrina" Height="Auto" Margin="447,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+        <materialDesign:Chip
+  Content="Hamzaoui Idriss" Height="Auto" Margin="195,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+        <materialDesign:Chip
+  Content="Benbrahim Abdelghani" Height="Auto" Margin="549,20,0,66" Width="202" Grid.Row="1" Grid.ColumnSpan="2">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+        <materialDesign:Chip
+  Content="Bezza Yousra" Height="Auto" Margin="311,22,0,66" Width="202" Grid.Row="1">
+            <materialDesign:Chip.Icon>
+                <Image
+      Source="Image/collaboration.png" />
+            </materialDesign:Chip.Icon>
+        </materialDesign:Chip>
+        <TextBox HorizontalAlignment="Left" Height="451" FontSize="18"  TextWrapping="Wrap" Text="&#x9;SiMemory est une application qui a pour but la visualisation de la cohabitation des processus en mémoire centrale, tout en montrant l'évolution des occupations et libérations de cette dernière en fonction des requêtes des processus, et des différents algorithmes appliqués pour ces requêtes. Afin de faciliter et simplifier les notions apprises en cours de système d'exploitation.                   &#xA; &#xA; &#x9;Cet outil a été confié aux étudiants de deuxième année préparatoire de l'école national supérieure d'informatique en Algérie , sous le cadre du module projet pluridisciplinaire.&#x9;&#x9;&#xD;&#xA;&#x9;&#xA;Il est muni d'une interface simple qui offre une simulation interactive en temps réel et dispose également des animations pour expliquer le fonctionnement complexe des algorithmes.&#xD;&#xA;&#x9; &#xD;&#xA; " VerticalAlignment="Top" Width="488" Margin="48,88,0,0" TextChanged="TextBox_TextChanged"/>
+
+    </Grid>
+</Page>

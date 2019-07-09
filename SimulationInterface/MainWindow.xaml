@@ -58,7 +58,7 @@
       Style="{StaticResource MaterialDesignTabRadioButton}"
       Margin="4,14,4,15"
       IsChecked="False"
-      Content="Aide" Width="110" />
+      Content="À propos" Width="110" Checked="RadioButton_Checked" />
             </StackPanel>
         </materialDesign:ColorZone>
 

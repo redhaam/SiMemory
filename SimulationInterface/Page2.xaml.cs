@@ -326,7 +326,7 @@ namespace SimulationInterface
 
         }
 
-        private void Choix_Click(object sender, RoutedEventArgs e)
+      /*  private void Choix_Click(object sender, RoutedEventArgs e)
         {
             P = algo.SelectedIndex;
             switch (P)
@@ -348,8 +348,7 @@ namespace SimulationInterface
 
 
             }
-
-        }
+        }*/
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {

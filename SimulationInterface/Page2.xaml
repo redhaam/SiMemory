@@ -164,8 +164,8 @@
                 </ListBox>
                 <TextBlock x:Name="Error" Canvas.Left="-10" TextWrapping="Wrap" Canvas.Top="348" Height="44" Width="160" FontWeight="Bold" Foreground="#FFFF1700" Background="#FFF1EFEF"/>
                 <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Nom" Canvas.Top="45" FontWeight="Bold"/>
-                <TextBlock Canvas.Left="7" TextWrapping="Wrap" Text="Taille" Canvas.Top="109" FontWeight="Bold"/>
-                <TextBlock Canvas.Left="6" TextWrapping="Wrap" Text="temp" Canvas.Top="174" FontWeight="Bold"/>
+                <TextBlock Canvas.Left="7" TextWrapping="Wrap" Text="Taille (Mo)" Canvas.Top="109" FontWeight="Bold"/>
+                <TextBlock Canvas.Left="6" TextWrapping="Wrap" Text="temps (sec)" Canvas.Top="174" FontWeight="Bold"/>
             </Canvas>
             <Rectangle HorizontalAlignment="Left" Height="290" Stroke="#FFDDDDDD" StrokeThickness="0" VerticalAlignment="Top" Width="295" Panel.ZIndex="1" Margin="20,135,0,0" RadiusX="15" RadiusY="15" Fill="#FFE8E7E7">
                 <Rectangle.Effect>
@@ -198,14 +198,14 @@
                 </Rectangle.Effect>
             </Rectangle>
             <TextBlock HorizontalAlignment="Left" Margin="1110,110,0,0" TextWrapping="Wrap" Text="Etat de la mémoire" VerticalAlignment="Top" Height="35" Width="256" FontSize="16" TextAlignment="Center" Foreground="#FFF1EFEF" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="30,103,0,0" TextWrapping="Wrap" Text="liste des processus" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFF1EFEF" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="30,103,0,0" TextWrapping="Wrap" Text="liste de processus" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFF1EFEF" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="255" FontSize="16" TextAlignment="Center" Foreground="#FFEDEDF0" FontWeight="Bold"><Run Text="Statistiques de"/><Run Text="s processus"/></TextBlock>
-            <Button x:Name="choix" Content="Choisir" HorizontalAlignment="Left" Margin="335,680,0,0" VerticalAlignment="Top" Width="120" Height="42" Background="#80deea" Foreground="#FF3E3E42" BorderBrush="{x:Null}" FontSize="22" FontWeight="Bold" Click="Choix_Click"/>
+            <Button x:Name="choix" Content="Choisir" HorizontalAlignment="Left" Margin="335,680,0,0" VerticalAlignment="Top" Width="120" Height="42" Background="#80deea" Foreground="#FF3E3E42" BorderBrush="{x:Null}" FontSize="22" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="540,660,0,0" TextWrapping="Wrap" Text="Contrôleur de vitesse " VerticalAlignment="Top" Height="26" Width="330" Background="#aed581" FontSize="14" FontWeight="Bold" TextAlignment="Center" Foreground="Black" />
             <TextBlock HorizontalAlignment="Left" Margin="870,635,0,0" TextWrapping="Wrap" Text="Lent" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="25" Width="50" TextAlignment="Center" Foreground="#FF3E3E42"/>
             <TextBlock HorizontalAlignment="Left" Margin="475,635,0,0" TextWrapping="Wrap" Text="Rapide" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="25" Width="60" TextAlignment="Center" Foreground="#FF3E3E42"/>
             <Button x:Name="End" Content="End" HorizontalAlignment="Left" Margin="790,713,0,0" VerticalAlignment="Top" Width="80" Background="#80deea" Foreground="#FF3E3E42" BorderBrush="{x:Null}" FontWeight="Bold" Height="40" Click="End_Click" />
-            <TextBlock x:Name="exp" HorizontalAlignment="Left" Margin="60,255,0,0" TextWrapping="Wrap" Text="Afficher tous les détailles concernant les processus " VerticalAlignment="Top" Height="50" Width="200" Panel.ZIndex="1" FontSize="16" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock x:Name="exp" HorizontalAlignment="Left" Margin="60,255,0,0" TextWrapping="Wrap" Text="Afficher tous les détails concernant les processus " VerticalAlignment="Top" Height="50" Width="200" Panel.ZIndex="1" FontSize="16" FontWeight="Bold" TextAlignment="Center"/>
             <Rectangle Fill="#8bc34a" HorizontalAlignment="Left" Height="60" Margin="575,105,0,0" Stroke="#FF525858" VerticalAlignment="Top" Width="220" StrokeThickness="5"/>
             <TextBlock HorizontalAlignment="Left" Margin="666,121,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" Foreground="#FF3E3E42"/>
             <Button x:Name="ALL" Content="Tout" HorizontalAlignment="Left" Margin="25,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#8bc34a" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" Click="Button_Click_5"/>
@@ -213,7 +213,7 @@
             <Button x:Name="en_attente" Content="en attente" HorizontalAlignment="Left" Margin="175,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#FFB9B7B7" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" FontSize="7" Click="En_attente_Click"/>
             <Button x:Name="finis" Content="finis" HorizontalAlignment="Left" Margin="245,145,0,0" VerticalAlignment="Top" Width="65" Height="25" Panel.ZIndex="3" Background="#FFB9B7B7" BorderBrush="{x:Null}" Foreground="#FF3E3E42" FontWeight="Bold" FontSize="8" Click="Finis_Click"/>
             <Button x:Name="synchro" Content="" HorizontalAlignment="Left" Margin="1140,742,0,0" VerticalAlignment="Top" Width="164" Background="{x:Null}" BorderBrush="{x:Null}" Click="Synchro_Click"/>
-            <TextBlock x:Name="Algorithme" HorizontalAlignment="Left" Margin="648,74,0,0" TextWrapping="Wrap" Text="First Fit" FontWeight="Bold" FontStyle="Italic" FontSize="20" VerticalAlignment="Top" Height="26" Width="103"/>
+           <!-- <TextBlock x:Name="Algorithme" HorizontalAlignment="Left" Margin="648,74,0,0" TextWrapping="Wrap" Text="First Fit" FontWeight="Bold" FontStyle="Italic" FontSize="20" VerticalAlignment="Top" Height="26" Width="103"/>-->
         </Grid>
     </Grid>
 </Page>
