@@ -47,8 +47,6 @@ namespace SimulationInterface
         }
 
 
-
-
         public RAM_fix(List<int> list,int cap)
         {            
             capacite = cap;                          
@@ -67,10 +65,6 @@ namespace SimulationInterface
                 k = k + m ;
             }
         }
-
-        
-
-
 
         public void vider_part(partition p,int tai)
         {
@@ -93,6 +87,7 @@ namespace SimulationInterface
 
            
         }
+
         public void occ_part(partition pr,processus proc,int tai)
         {
             int num = list_rep.IndexOf(pr);
@@ -120,6 +115,7 @@ namespace SimulationInterface
             if (rech) { return -1; }
             else { return indice; }
         }
+
         public int Rech_best(processus proc)//retourne l'indice de la partition ou doit etre insere proc
         {
             int indice = 0;
@@ -146,6 +142,7 @@ namespace SimulationInterface
 
 
         }
+
         public int Rech_worst(processus proc)
         {
 
@@ -190,35 +187,11 @@ namespace SimulationInterface
             else { return indice; }
         }
 
-        /*public int best_fit(processus pro)
-         * 
-		{
-
-			int[] comp;
-			int min = pro.Get_taille()-list_zone_libre[0].Get_taille();
-			int index;
-			while (true)
-			{
-				for (int i = 1; i < list_zone_libre.Count; i++)
-				{
-					if ((pro.Get_taille() - list_zone_libre[i].Get_taille() > 0) && (pro.Get_taille() - list_zone_libre[i].Get_taille() < min))
-					{
-						min = pro.Get_taille() - list_zone_libre[i].Get_taille();
-						index = i;
-					}
-				}
-			}
-			return index;
-         }
-		public void Worst_fit(processus pro)
-		{
-          list_zone_libre.Sort()
-		}
-		*/
         public int Get_Capacity()
         {
             return capacite;
         }
+
         public int calcul_esplibre()
         {
             int res = 0, i = 0;

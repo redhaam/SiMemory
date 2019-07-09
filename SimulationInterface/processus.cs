@@ -24,7 +24,7 @@ namespace SimulationInterface
         private int bas;
         private int taille;
         private int temp_ex;      //le temps d execution de la processus en seconde 
-        private int etat;// possede trois etat active(1) bloquee(-1) et en attente(0) 
+        private int etat; // possede trois etat active(1) bloquee(-1) et en attente(0) 
         private int num_part;
         public Color clr;
        
@@ -90,6 +90,8 @@ namespace SimulationInterface
         {
             this.num_part = num_part;
         }
+
+        //redifinition des equals, compareTO ET equals
         public override bool Equals(Object obj)
         {
             //Check for null and compare run-time types.

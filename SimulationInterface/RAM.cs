@@ -20,7 +20,7 @@ namespace SimulationInterface
     class RAM
     {
         public int capacite;   // la capacite de la ram exprimer en ko
-        public List<int> list_zone_libre;// la liste des zones libres de la MC(!!!!les trois premiers position determine le num de la partition et les autres sa taille!!!!!)
+        public List<int> list_zone_libre;// la liste des zones libres de la MC(les trois premiers position determine le num de la partition et les autres sa taille)
         public List<partition> list_rep;
         protected static int next_fit;
 

@@ -36,6 +36,7 @@ namespace SimulationInterface
             next_fit = i;
             return i;
         }
+
         public int worst_fit(int procees_taille)
         {
             if (procees_taille > capacite) return -2; //!!!!!si la taille de la processus est sup a celle de la ram elle reourne -2
@@ -47,6 +48,7 @@ namespace SimulationInterface
             }
             else return -1;// il n'ya de parttion qui peyt contenir la processus
         }
+
         public int best_fit(int procees_taille)
         {
             int i = -1;
@@ -63,6 +65,7 @@ namespace SimulationInterface
             next_fit = i;
             return i;
         }
+
         public int Next_fit(int procees_taille)
         {
             if ((next_fit >= list_rep.Count) || (next_fit < 0)) next_fit = 0;
@@ -103,6 +106,7 @@ namespace SimulationInterface
 
 
         }
+
         public int Liberation_part(int prt)
         {
             int prec, suiv = 0, res = 0;
@@ -154,6 +158,7 @@ namespace SimulationInterface
             }
             else return res;
         }
+
         public void corriger_remove(int prt, int dec)
         {
             int i = 0;

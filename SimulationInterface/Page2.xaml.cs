@@ -66,7 +66,7 @@ namespace SimulationInterface
                 catch (FormatException)
                 {
                     Error.Text = "Taille Devrait etre un entier positive";
-                    Ajout.Fill = new SolidColorBrush(Colors.Red);
+                    
                     ColorAnimation myColorAnimation = new ColorAnimation(Colors.Red, Color.FromRgb(241, 239, 239), TimeSpan.FromMilliseconds(4000));
                     Error.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, myColorAnimation);
                     return;
@@ -74,7 +74,7 @@ namespace SimulationInterface
                 catch (Exception)
                 {
                     Error.Text = "Taille plus grand que la capacité max de la mémoire";
-                    Ajout.Fill = new SolidColorBrush(Colors.Red);
+                   
                     ColorAnimation myColorAnimation = new ColorAnimation(Colors.Red, Color.FromRgb(241, 239, 239), TimeSpan.FromMilliseconds(4000));
                     Error.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, myColorAnimation);
                     return;
@@ -82,7 +82,7 @@ namespace SimulationInterface
                 finally
                 {
                     ColorAnimation myColorAnimation = new ColorAnimation(Color.FromRgb(0, 255, 184), TimeSpan.FromMilliseconds(4000));
-                    Ajout.Fill.BeginAnimation(SolidColorBrush.ColorProperty, myColorAnimation);
+                    
                 }
 
                 if (f < mem.capacite)
