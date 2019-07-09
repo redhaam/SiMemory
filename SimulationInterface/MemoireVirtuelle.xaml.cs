@@ -79,11 +79,14 @@ namespace SimulationInterface
                 }
                 np.FontSize                = 20;
                 np.Text                    = k.ToString();
+                np.TextAlignment = TextAlignment.Center;
+                np.Width = 50;
                 shape.MouseLeftButtonDown += delegate
                 {
 
                         if (suiteReferences.Text == "") suiteReferences.Text = np.Text;
                         else suiteReferences.Text += " " + np.Text;
+                    if (!lancer.IsEnabled) { lancer.IsEnabled = true; suivant.IsEnabled = true; }
 
 
                 };
@@ -274,11 +277,12 @@ public delegate void ajoutNombre(UIElement element);
             double x = 0;
             Rectangle shape = new Rectangle();
             int k = 0;
-            int plc = 20; 
-            double plcy = 79;
+            int plc = 0; 
+            double plcy = 50;
             foreach (Part p in ram.listPages)
             {
-                TextBlock np = new TextBlock();
+                TextBlock np = new TextBlock()
+                { TextAlignment = TextAlignment.Center, Width = 50, FontFamily = new FontFamily("Roboto"), FontSize = 20,VerticalAlignment=VerticalAlignment.Center,Height= ((1 * 250) / ram.getNombrePages()) };
                 shape = new Rectangle();
                 shape.Height = ((1 * 250) / ram.getNombrePages());
                 shape.Width = 150;
@@ -293,7 +297,6 @@ public delegate void ajoutNombre(UIElement element);
                 {
                     shape.Fill = Brushes.LightCyan;
                     int mil = tablePages.FindIndex(e => e.getPageCorrespandante() == k && e.getDisponible() == true);
-                    np.FontSize = 20;
                     np.Text = Convert.ToString(mil);
                 }
                 canvas1.Children.Add(shape);

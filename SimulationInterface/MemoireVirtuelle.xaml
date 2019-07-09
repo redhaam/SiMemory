@@ -39,7 +39,7 @@
         <Button x:Name="lancer" Content="lancer" Click="begin" Margin="189,338,1183,418" RenderTransformOrigin="-1.345,4.284" Height="Auto" />
         <Button x:Name="stop"  Content="Stop" HorizontalAlignment="Left" IsEnabled="False" Height="31" Margin="836,667,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click" RenderTransformOrigin="1.332,0.606"/>
 
-        <ScrollViewer x:Name="tPages" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"  VerticalScrollBarVisibility="Disabled"   FontSize="16" Margin="1096,105,46,463" HorizontalScrollBarVisibility="Disabled"   />
+        <ScrollViewer x:Name="tPages" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"  VerticalScrollBarVisibility="Disabled"   FontSize="16" Margin="1096,105,46,436" HorizontalScrollBarVisibility="Disabled"   />
         <Rectangle  Fill="#FFF4F4F5"  materialDesign:ShadowAssist.ShadowDepth="Depth5" HorizontalAlignment="Left" Height="234" Margin="109,464,0,0" VerticalAlignment="Top" Width="333">
             <Rectangle.Effect>
                 <DropShadowEffect Color="#FFC3C3C3"/>
@@ -56,12 +56,12 @@
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="109,65,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="333"/>
         <TextBlock HorizontalAlignment="Left" Margin="161,77,0,0" TextWrapping="Wrap" Text="choix d'algorithme de remplacement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="1112,490,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="306"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1173,502,0,0" TextWrapping="Wrap" Text="choix d'algorithme de remplacement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1173,502,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="109,421,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="333"/>
         <TextBlock HorizontalAlignment="Left" Margin="235,433,0,0" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
         <TextBlock x:Name="demande" HorizontalAlignment="Left" Height="45" Margin="141,502,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="258" FontSize="16"/>
         <Rectangle Fill="#00acc1" HorizontalAlignment="Left" Height="40" Margin="1112,65,0,0" RadiusY="5" RadiusX="5" StrokeThickness="3" VerticalAlignment="Top" Width="320"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1178,77,0,0" TextWrapping="Wrap" Text="Deroulement" VerticalAlignment="Top" Foreground="#DDFFFFFF" RenderTransformOrigin="0.886,0.542"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1178,77,0,0" TextWrapping="Wrap" Text="Table de page" VerticalAlignment="Top" Foreground="#DDFFFFFF" RenderTransformOrigin="0.886,0.542"/>
         <TextBlock HorizontalAlignment="Left" Height="33" Margin="141,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239"><Run Text="(une suite de nombres entre 0 et 9) "/><LineBreak/><Run Text="separés par des espaces"/></TextBlock>
         <TextBlock x:Name="msgErreur"  HorizontalAlignment="Left" Height="27" Margin="142,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Foreground="#DDD62222"/>
         <TextBlock HorizontalAlignment="Left" Height="16" FontSize="10" Margin="1152,370,0,0" TextWrapping="Wrap" Text="Table de page" VerticalAlignment="Top" Width="156"/>
