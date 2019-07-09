@@ -74,7 +74,7 @@
 
 
 
-        <materialDesign:Card Margin="602,13,599,0" Height="450" Grid.Row="1">
+        <materialDesign:Card Margin="615,10.6,585.8,0" Height="450" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition
@@ -98,7 +98,7 @@
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="106,167.2,106,71.6" Grid.Row="1" Click="Button_Click_2" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="26,167,186,72" Grid.Row="1" Click="Button_Click_2" Height="Auto">
                     Simulation
                 </Button>
                 <Image Source="y.png" Stretch="Fill"/>
@@ -152,8 +152,15 @@
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="106,167.2,106,71.6" Grid.Row="1" Click="Button_Click" Height="Auto" >
-
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="25,175,194,76" Grid.Row="1" Click="Button_Click" Height="Auto" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.213"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
                     Simulation
                 </Button>
             </Grid>
@@ -190,7 +197,8 @@
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="106,195,106,79.8" Grid.Row="1" Click="Button_Click_3" Height="Auto">
+    Width="100"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="18,106,157,19" Grid.Row="1" Click="Button_Click_3">
                     Simulation
                 </Button>
 
