@@ -58,5 +58,18 @@ namespace SimulationInterface
             Main.Content = new SimPartVariable();
 
         }
+
+        
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Apropos();
+
+        }
+
+        private void Button_Click_p9(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -491,6 +491,7 @@ namespace SimulationInterface
                     en_cours[i].Set_time(en_cours[i].Get_temps() - 1);
                     if (en_cours[i].Get_temps() == 0)
                     {
+                        Derl.Add("");
                         Derl[minute+1] += ">>>> le processus <" + en_cours[i].name + "> est libere de lemplacement<" + en_cours[i].Get_part() + ">\n\n";
                         part = en_cours[i].Get_part();
                         //finish(en_cours[i].Get_id());
@@ -524,7 +525,7 @@ namespace SimulationInterface
             fifo.Add(pro);
 
         }
-        public void afficher_encours()
+        public void afficher_encours(Canvas proce)
         {
             int i = 0;
             Console.WriteLine("les processus :");

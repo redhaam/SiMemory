@@ -326,7 +326,7 @@ namespace SimulationInterface
 
         }
 
-        private void Choix_Click(object sender, RoutedEventArgs e)
+       private void Choix_Click(object sender, RoutedEventArgs e)
         {
             P = algo.SelectedIndex;
             switch (P)
@@ -348,14 +348,13 @@ namespace SimulationInterface
 
 
             }
-
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             param = 1;
-            proce.Children.Clear();
-            //pro.afficher_encours(proce, param);
+            Sta.Children.Clear();
+            pro.afficher_encours(Sta, param);
             ALL.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -366,8 +365,8 @@ namespace SimulationInterface
         private void En_cours_Click(object sender, RoutedEventArgs e)
         {
             param = 2;
-            proce.Children.Clear();
-            //pro.afficher_encours(proce, param);
+            Sta.Children.Clear();
+            pro.afficher_encours(Sta, param);
             en_cours.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             ALL.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -377,8 +376,8 @@ namespace SimulationInterface
         private void En_attente_Click(object sender, RoutedEventArgs e)
         {
             param = 3;
-            proce.Children.Clear();
-           // pro.afficher_encours(proce, param);
+            Sta.Children.Clear();
+           pro.afficher_encours(Sta, param);
             en_attente.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             ALL.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
@@ -388,8 +387,8 @@ namespace SimulationInterface
         private void Finis_Click(object sender, RoutedEventArgs e)
         {
             param = 4;
-            proce.Children.Clear();
-           // pro.afficher_encours(proce, param);
+            Sta.Children.Clear();
+           pro.afficher_encours(Sta, param);
             finis.Background = new SolidColorBrush(Color.FromRgb(138, 193, 72));
             en_cours.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
             en_attente.Background = new SolidColorBrush(Color.FromRgb(183, 183, 183));
