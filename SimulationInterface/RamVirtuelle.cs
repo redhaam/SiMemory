@@ -8,22 +8,11 @@ namespace SimulationInterface
 {
     class RamVirtuelle : ICloneable
     {
-        public RamVirtuelle Clone()
-        {
-            RamVirtuelle tmp = (RamVirtuelle)this.MemberwiseClone();
-            tmp.listPages = new List<Part> (this.listPages.Select(x => x.Clone()));
-            return tmp;
-        }
-        object ICloneable.Clone()
-        {
-            return Clone();
-        }
-
         private int nombrePages;
         private int taillePage;
         private int nombrePagesLibres;
-        public List<Part> listPages=new List<Part>();
-        
+        public List<Part> listPages = new List<Part>();
+
         public RamVirtuelle(int cap)
         { nombrePages = cap;
             taillePage = 4;
@@ -35,7 +24,23 @@ namespace SimulationInterface
         public int getNombrePages() { return nombrePages; }
         public void setNombrePages(int nbpages) { nombrePages = nbpages; }
         public int getNombrepagesLibres() { return nombrePagesLibres; }
-        public void setNombrePagesLibres(int nbpagesLibres) { nombrePagesLibres = nbpagesLibres; }
+        public void setNombrePagesLibres(int nbpagesLibres)
+        { nombrePagesLibres = nbpagesLibres; }
+
+        public RamVirtuelle Clone()
+        {
+            RamVirtuelle tmp = (RamVirtuelle)this.MemberwiseClone();
+            tmp.listPages = new List<Part> (this.listPages.Select(x => x.Clone()));
+            return tmp;
+        }
+        object ICloneable.Clone()
+        {
+            return Clone();
+        }
+
+        
+
+        
 
     }
 }
