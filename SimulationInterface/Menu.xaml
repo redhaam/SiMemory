@@ -161,33 +161,38 @@
         <materialDesign:Card Margin="1077,10,124,0" Height="353" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition
-        Height="140*" />
-                    <RowDefinition Height="313*" />
+                    <RowDefinition />
                     <RowDefinition
         Height="Auto" />
                 </Grid.RowDefinitions>
                 <Image
       Image.Source="Image\z.png"
-      Stretch="UniformToFill" Margin="0,0,-1,180" Grid.RowSpan="2" />
+      Stretch="UniformToFill" Margin="0,0,-1,180" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.334"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.994"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
                 <Button
-      Grid.Row="1"
       Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
       HorizontalAlignment="Right"
       VerticalAlignment="Top"
-      Margin="0,43,10,0" Click="Button_Click_5">
+      Margin="0,152,10,0" Click="Button_Click_5">
                     <materialDesign:PackIcon
         Kind="AutoStories" />
                 </Button>
                 <StackPanel
-      Grid.Row="1"
-      Margin="8,84,8,0">
+      Margin="8,193,8,0">
                     <TextBlock
         FontWeight="Bold" Height="28" Margin="121,0,103,0" FontSize="16"><Run Text="Pagination"/></TextBlock>
                 </StackPanel>
                 <Button
     Style="{StaticResource MaterialDesignRaisedLightButton}"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="105,141,103,58" Grid.Row="1" Click="Button_Click_3" Height="Auto">
+    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="105,250,103,58" Click="Button_Click_3" Height="Auto">
                     Simulation
                 </Button>
 

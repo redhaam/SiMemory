@@ -32,11 +32,11 @@
             <ColumnDefinition Width="606*"/>
             <ColumnDefinition Width="935*"/>
         </Grid.ColumnDefinitions>
-        <materialDesign:PackIcon Kind="LinkedinBox" Height="52" Width="74" Margin="108,586,0,0" RenderTransformOrigin="0.514,0.615" />
+        <materialDesign:PackIcon Kind="GithubBox" Height="52" Width="74" Margin="108,586,0,0" RenderTransformOrigin="0.514,0.615" />
 
         <Image Source="Image/collaboration.png" RenderTransformOrigin="0.657,0.288" Grid.Column="1" Margin="0,70,1,63"/>
         <TextBlock Margin="202,596,82,38" FontSize="20"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" 
-               NavigateUri="http://www.msn.com">Contactez nous sur Linkedin</Hyperlink></TextBlock>
+               NavigateUri="https://github.com/am3redha/SiMemory">Contactez nous sur Github</Hyperlink></TextBlock>
 
         <materialDesign:Card
     materialDesign:ShadowAssist.ShadowDepth="Depth3" 
@@ -52,47 +52,29 @@
 
         <materialDesign:Chip
   Content="Amirouche M.Redha" Height="Auto" Margin="65,20,0,66" Width="202" Grid.Row="1">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+            
         </materialDesign:Chip>
 
         <materialDesign:Chip
   Content="Mecharbat L.Abdelkrim" Height="Auto" Margin="695,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+            
         </materialDesign:Chip>
 
         <materialDesign:Chip
   Content="Smail Sabrina" Height="Auto" Margin="447,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+            
         </materialDesign:Chip>
         <materialDesign:Chip
   Content="Hamzaoui Idriss" Height="Auto" Margin="195,20,0,66" Width="202" Grid.Row="1" Grid.Column="1">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+           
         </materialDesign:Chip>
         <materialDesign:Chip
   Content="Benbrahim Abdelghani" Height="Auto" Margin="549,20,0,66" Width="202" Grid.Row="1" Grid.ColumnSpan="2">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+            
         </materialDesign:Chip>
         <materialDesign:Chip
   Content="Bezza Yousra" Height="Auto" Margin="311,22,0,66" Width="202" Grid.Row="1">
-            <materialDesign:Chip.Icon>
-                <Image
-      Source="Image/collaboration.png" />
-            </materialDesign:Chip.Icon>
+            
         </materialDesign:Chip>
         <TextBox HorizontalAlignment="Left" Height="451" FontSize="18"  TextWrapping="Wrap" Text="&#x9;SiMemory est une application qui a pour but la visualisation de la cohabitation des processus en mémoire centrale, tout en montrant l'évolution des occupations et libérations de cette dernière en fonction des requêtes des processus, et des différents algorithmes appliqués pour ces requêtes. Afin de faciliter et simplifier les notions apprises en cours de système d'exploitation.                   &#xA; &#xA; &#x9;Cet outil a été confié aux étudiants de deuxième année préparatoire de l'école national supérieure d'informatique en Algérie , sous le cadre du module projet pluridisciplinaire.&#x9;&#x9;&#xD;&#xA;&#x9;&#xA;Il est muni d'une interface simple qui offre une simulation interactive en temps réel et dispose également des animations pour expliquer le fonctionnement complexe des algorithmes.&#xD;&#xA;&#x9; &#xD;&#xA; " VerticalAlignment="Top" Width="488" Margin="48,88,0,0" TextChanged="TextBox_TextChanged"/>
 
